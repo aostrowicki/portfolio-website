@@ -6,12 +6,15 @@
 }
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap');
 
 // .........................................
 
 $btn-shadow: rgb(231, 217, 255);
 $shadow: 0px 10px 20px $btn-shadow;
-
+$color-st:#3E41AE;
+$color-nd:#CB4599;
+$color-rd:rgb(133, 62, 174);
 
 // .........................................
 
@@ -40,15 +43,82 @@ nav{
     font-weight: bold;
     background: white;
 
-    li{
-        list-style: none;
-        display: inline-block;
+    #logo a{
+        text-transform: lowercase;
+        font-size: 1.6em;
+        font-family: 'Maven Pro', sans-serif;
+        font-weight: medium;
+        color:black;
+        letter-spacing: -0.05em;
+        text-decoration: none;   
+    }
 
+    #logo:first-letter{
+        color: $color-st;
+    }
+
+    .list{
+        display:flex;
+        align-items: center;
+        
         a {
             text-decoration: none;
             color:black;
-            margin-right:2em; 
+            margin-right:1.5em;
+            padding:12px 4px;
+            position: relative;
+            
+            &:first-of-type{
+                margin-right: 0.8em;
+            }
+
+            &:hover{
+                animation: colors 0.8s ease-in-out forwards;
+                &::after{
+                    animation: lines 0.8s ease-out forwards;
+                }
+            }
+
+            &.underline::after{
+                content:'';
+                height:1px;
+                width: 0px;
+                display:block;
+                position: absolute;
+                left:50%;  
+            }
+
+            svg{
+                margin: 0 5px;
+                width:22px;
+                height:auto; 
+                vertical-align: bottom;   //  !!!!!!!!!!!!!!!!!!!!!
+            }
         }
+    }
+}
+
+@keyframes colors{
+    25% {
+        fill:$color-st;
+        color:$color-st;
+    }
+    100%{
+        fill:$color-rd;
+        color:$color-rd;
+    }
+}
+
+@keyframes lines{
+    25% {
+        background:$color-st;
+        width:40%;
+        left:30%;
+    }
+    100%{
+        background:$color-rd;
+        width:75%;
+        left:12.5%;
     }
 }
 
@@ -70,17 +140,27 @@ nav{
     border-radius: 30px;
     margin-right: 20px;
     margin-bottom: 30px;
-    font-size:1em;
+    font-size:em;
     font-weight: bold;
     text-align: center;
     box-shadow: $shadow;
     text-transform: uppercase;
+    transition: all 0.1s ease-in;
+
+    &:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 12px 20px rgb(226, 207, 255);
+    }
 }
 
+
 .btn-prm{
-    background: linear-gradient(118.68deg, #3E41AE 0.94%, #CB4599 94.42%);
+    background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
     box-shadow: 0px 10px 20px rgb(182, 137, 255);
     color:white;
+    &:hover{
+        box-shadow: 0px 12px 20px rgb(177, 129, 255);
+    }
 }
 
 #landing{
@@ -100,27 +180,25 @@ nav{
             h1{
                 font-size: 3em;
                 text-transform: uppercase;
-                line-height: 1.5em;
                 overflow-y: hidden;
-                margin-bottom: 0.5em;
-                margin-top: 1em;    
+                margin-bottom: 0.5em;  
             }
 
             p{
                 display: inline-block;
-                width:80%;
+                width:100%;
                 font-size: 1.2em;
                 font-weight: 400;
                 color: rgb(134, 134, 134);
-                line-height: 2em;
-                margin-bottom: 3em;
+                line-height: 1.8em;
+                margin-bottom: 5em;
             }
         }
 
         #landing-svg{
             margin-top: 5em;
             width:60%;
-
+            
             svg{
                 width:100%;
                 height:auto;
@@ -133,7 +211,17 @@ nav{
     font-size: 3em;
     text-transform: uppercase;
     text-align: center;
-    margin: 1em 0 0 0;
+    margin: 2em 0 0.5em 0;
+
+    &::after{
+        content:'';
+        display:block;
+        height:1px;
+        width:5%;
+        background:$color-st;
+        position:absolute;
+        left:47.5%;
+    }
 }
 
 #about{
@@ -144,7 +232,7 @@ nav{
         display:flex;
         column-gap:5em;
         justify-content: space-between;
-        padding:3em;
+        padding:3em 1em;
         margin-bottom: 3em;
 
         .card {
@@ -156,7 +244,8 @@ nav{
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;    
+            justify-content: center;   
+            transition: all 0.1s ease-in; 
 
             .svg-container{
                 margin-bottom:3em;
@@ -174,6 +263,10 @@ nav{
                 font-size: 1em;
             }
 
+            &:hover{
+                transform: translateY(-5px);
+                box-shadow: 0 15px 20px rgb(226, 207, 255);
+            }
         }
     }
 }

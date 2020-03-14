@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -37,15 +38,113 @@ nav {
   background: white;
 }
 
-.nav-container li {
-  list-style: none;
-  display: inline-block;
+.nav-container #logo a {
+  text-transform: lowercase;
+  font-size: 1.6em;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: medium;
+  color: black;
+  letter-spacing: -0.05em;
+  text-decoration: none;
 }
 
-.nav-container li a {
+.nav-container #logo:first-letter {
+  color: #3E41AE;
+}
+
+.nav-container .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-container .list a {
   text-decoration: none;
   color: black;
-  margin-right: 2em;
+  margin-right: 1.5em;
+  padding: 12px 4px;
+  position: relative;
+}
+
+.nav-container .list a:first-of-type {
+  margin-right: 0.8em;
+}
+
+.nav-container .list a:hover {
+  -webkit-animation: colors 0.8s ease-in-out forwards;
+          animation: colors 0.8s ease-in-out forwards;
+}
+
+.nav-container .list a:hover::after {
+  -webkit-animation: lines 0.8s ease-out forwards;
+          animation: lines 0.8s ease-out forwards;
+}
+
+.nav-container .list a.underline::after {
+  content: '';
+  height: 1px;
+  width: 0px;
+  display: block;
+  position: absolute;
+  left: 50%;
+}
+
+.nav-container .list a svg {
+  margin: 0 5px;
+  width: 22px;
+  height: auto;
+  vertical-align: bottom;
+}
+
+@-webkit-keyframes colors {
+  25% {
+    fill: #3E41AE;
+    color: #3E41AE;
+  }
+  100% {
+    fill: #853eae;
+    color: #853eae;
+  }
+}
+
+@keyframes colors {
+  25% {
+    fill: #3E41AE;
+    color: #3E41AE;
+  }
+  100% {
+    fill: #853eae;
+    color: #853eae;
+  }
+}
+
+@-webkit-keyframes lines {
+  25% {
+    background: #3E41AE;
+    width: 40%;
+    left: 30%;
+  }
+  100% {
+    background: #853eae;
+    width: 75%;
+    left: 12.5%;
+  }
+}
+
+@keyframes lines {
+  25% {
+    background: #3E41AE;
+    width: 40%;
+    left: 30%;
+  }
+  100% {
+    background: #853eae;
+    width: 75%;
+    left: 12.5%;
+  }
 }
 
 .container {
@@ -66,12 +165,21 @@ nav {
   border-radius: 30px;
   margin-right: 20px;
   margin-bottom: 30px;
-  font-size: 1em;
+  font-size: em;
   font-weight: bold;
   text-align: center;
   -webkit-box-shadow: 0px 10px 20px #e7d9ff;
           box-shadow: 0px 10px 20px #e7d9ff;
   text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 12px 20px #e2cfff;
+          box-shadow: 0 12px 20px #e2cfff;
 }
 
 .btn-prm {
@@ -79,6 +187,11 @@ nav {
   -webkit-box-shadow: 0px 10px 20px #b689ff;
           box-shadow: 0px 10px 20px #b689ff;
   color: white;
+}
+
+.btn-prm:hover {
+  -webkit-box-shadow: 0px 12px 20px #b181ff;
+          box-shadow: 0px 12px 20px #b181ff;
 }
 
 #landing {
@@ -107,20 +220,18 @@ nav {
 #landing .container #landing-text h1 {
   font-size: 3em;
   text-transform: uppercase;
-  line-height: 1.5em;
   overflow-y: hidden;
   margin-bottom: 0.5em;
-  margin-top: 1em;
 }
 
 #landing .container #landing-text p {
   display: inline-block;
-  width: 80%;
+  width: 100%;
   font-size: 1.2em;
   font-weight: 400;
   color: #868686;
-  line-height: 2em;
-  margin-bottom: 3em;
+  line-height: 1.8em;
+  margin-bottom: 5em;
 }
 
 #landing .container #landing-svg {
@@ -137,7 +248,17 @@ nav {
   font-size: 3em;
   text-transform: uppercase;
   text-align: center;
-  margin: 1em 0 0 0;
+  margin: 2em 0 0.5em 0;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 5%;
+  background: #3E41AE;
+  position: absolute;
+  left: 47.5%;
 }
 
 #about {
@@ -154,7 +275,7 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 3em;
+  padding: 3em 1em;
   margin-bottom: 3em;
 }
 
@@ -178,6 +299,8 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 #about .card-container .card .svg-container {
@@ -194,5 +317,12 @@ nav {
   color: #868686;
   font-weight: 400;
   font-size: 1em;
+}
+
+#about .card-container .card:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 15px 20px #e2cfff;
+          box-shadow: 0 15px 20px #e2cfff;
 }
 /*# sourceMappingURL=style.css.map */
