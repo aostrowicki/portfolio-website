@@ -24,10 +24,11 @@ body{
     font-size: 16px;
 }
 
-
 nav{
+    background:white;
     position: fixed;
     width: 100%;
+    z-index: 3;
 }
 
 .nav-container{
@@ -128,6 +129,7 @@ nav{
     height:100%;
     margin:auto;
     background:white;
+    overflow:visible;
 }
 
 .btn{
@@ -140,7 +142,7 @@ nav{
     border-radius: 30px;
     margin-right: 20px;
     margin-bottom: 30px;
-    font-size:em;
+    font-size:1em;
     font-weight: bold;
     text-align: center;
     box-shadow: $shadow;
@@ -148,18 +150,44 @@ nav{
     transition: all 0.1s ease-in;
 
     &:hover{
-        transform: translateY(-2px);
-        box-shadow: 0 12px 20px rgb(226, 207, 255);
+        transform: translateY(-3px);
+        box-shadow: 0 13px 30px -1px rgb(221, 199, 255);
     }
 }
 
 
 .btn-prm{
     background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
-    box-shadow: 0px 10px 20px rgb(182, 137, 255);
+    box-shadow: 0px 10px 20px rgb(199, 164, 255);
     color:white;
+
     &:hover{
-        box-shadow: 0px 12px 20px rgb(177, 129, 255);
+        box-shadow: 0px 13px 30px -1px rgb(193, 154, 255);
+    }
+}
+
+.btn-inner{
+    box-shadow: inset 0px 10px 20px $btn-shadow;
+    width:180px;
+    padding: 1em 2em;
+    font-size: 0.9em;
+    margin-right: 2em;
+    margin-bottom: 0;
+    
+    &:hover{
+        box-shadow: inset 0px 7px 20px -2px $btn-shadow;
+        transform:translateY(3px);
+    }
+}
+
+.btn-icon{
+    padding:10px;
+    width:auto;
+    margin-right: 0;
+
+    svg{
+        width:2em;
+        vertical-align: bottom;
     }
 }
 
@@ -172,10 +200,12 @@ nav{
         align-items: center;
         justify-content: space-between;
         overflow-y: hidden;
+        overflow:visible;
         
         #landing-text{
             width:40%;
             padding-left:1rem;
+            overflow:visible;
             
             h1{
                 font-size: 3em;
@@ -211,7 +241,7 @@ nav{
     font-size: 3em;
     text-transform: uppercase;
     text-align: center;
-    margin: 2em 0 0.5em 0;
+    margin: 0 0 0.5em 0;
 
     &::after{
         content:'';
@@ -224,17 +254,16 @@ nav{
     }
 }
 
-#about{
-    width:100%;
 
+#about{
     .card-container {
         width:100%;
         display:flex;
         column-gap:5em;
         justify-content: space-between;
         padding:3em 1em;
-        margin-bottom: 3em;
-
+        overflow:visible;
+        
         .card {
             width:300px;
             background: #FFFFFF;
@@ -254,20 +283,79 @@ nav{
             
             h2{
                 margin-bottom:1em;
+                font-size: 2em;
             }
 
             p{
                 text-align: center;
                 color: rgb(134, 134, 134);
                 font-weight: 400;
-                font-size: 1em;
+                font-size: 1.2em;
             }
 
             &:hover{
-                transform: translateY(-5px);
-                box-shadow: 0 15px 20px rgb(226, 207, 255);
+                transform: translateY(-4px);
+                box-shadow: 0 14px 40px -1px rgb(226, 207, 255);
             }
         }
     }
 }
 
+#work{
+    .work-card-container{
+        padding: 3em 1em;
+
+        .work-card{
+            display:flex;
+            // margin-bottom: 30vh;
+            border-radius: 46px;
+            height: 300px;
+            box-shadow: $shadow;
+
+            h2{
+                font-size: 2em;
+                margin-bottom: 0.2em;
+            }
+
+            p{
+                color: rgb(134, 134, 134);
+                font-weight: 500;
+                font-size: 1.2em;
+                width: 90%;
+            }          
+            
+            &:nth-of-type(odd){
+                .work-card-left{
+                    width:35%;
+                    background:white;
+                    padding: 2em 3em;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .work-card-right{
+                    width: 65%;
+                    background:yellow;
+                }
+            }
+
+            &:nth-of-type(even){
+                .work-card-left{
+                    width:65%;
+                    background:blue;
+                }
+
+                .work-card-right{
+                    width:35%;
+                    background:white;
+                    padding: 2em 3em;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    
+}
