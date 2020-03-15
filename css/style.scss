@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap');
 
-// .........................................
+// Variables
 
 $btn-shadow: rgb(231, 217, 255);
 $shadow: 0px 10px 20px $btn-shadow;
@@ -16,13 +16,98 @@ $color-st:#3E41AE;
 $color-nd:#CB4599;
 $color-rd:rgb(133, 62, 174);
 
-// .........................................
-
+// GLOBAL STYLES
 
 body{
     font-family: 'Nunito', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
 }
+
+.container{
+    max-width: 1240px;
+    width:100%;
+    height:100%;
+    margin:auto;
+    background:white;
+    overflow:visible;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1em 0;
+    width: 180px;
+    background: white;
+    color: black;
+    text-decoration: none;  
+    border-radius: 30px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    font-size:0.8em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: $shadow;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in;
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 13px 30px -1px rgb(221, 199, 255);
+    }
+}
+
+.btn-prm{
+    background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
+    box-shadow: 0px 10px 20px rgb(199, 164, 255);
+    color:white;
+
+    &:hover{
+        box-shadow: 0px 13px 30px -1px rgb(193, 154, 255);
+    }
+}
+
+.btn-inner{
+    box-shadow: inset 0px 10px 20px $btn-shadow;
+    width:180px;
+    padding: 0.8em 2em;
+    font-size: 0.8em;
+    margin-right: 2em;
+    margin-bottom: 0;
+    
+    &:hover{
+        box-shadow: inset 0px 7px 20px -2px $btn-shadow;
+        transform:translateY(3px);
+    }
+}
+
+.btn-icon{
+    padding:10px;
+    width:auto;
+    margin-right: 0;
+
+    svg{
+        width:1.8em;
+        vertical-align: bottom;
+    }
+}
+
+.title{
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 0.5em 0;
+
+    &::after{
+        content:'';
+        display:block;
+        height:1px;
+        width:5%;
+        background:$color-st;
+        position:absolute;
+        left:47.5%;
+    }
+}
+
+// NAV STYLES
 
 nav{
     background:white;
@@ -37,9 +122,9 @@ nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    padding: 1em 0;
     color:black;
-    font-size: 1em;
+    font-size: 0.8em;
     text-transform: uppercase;
     font-weight: bold;
     background: white;
@@ -65,13 +150,9 @@ nav{
         a {
             text-decoration: none;
             color:black;
-            margin-right:1.5em;
+            margin-left:1.5em;
             padding:12px 4px;
             position: relative;
-            
-            &:first-of-type{
-                margin-right: 0.8em;
-            }
 
             &:hover{
                 animation: colors 0.8s ease-in-out forwards;
@@ -91,7 +172,7 @@ nav{
 
             svg{
                 margin: 0 5px;
-                width:22px;
+                width:1.4em;
                 height:auto; 
                 vertical-align: bottom;   //  !!!!!!!!!!!!!!!!!!!!!
             }
@@ -123,73 +204,10 @@ nav{
     }
 }
 
-.container{
-    max-width: 1240px;
-    width:100%;
-    height:100%;
-    margin:auto;
-    background:white;
-    overflow:visible;
-}
-
-.btn{
-    display: inline-block;
-    padding: 1em 0;
-    width: 180px;
-    background: white;
-    color: black;
-    text-decoration: none;  
-    border-radius: 30px;
-    margin-right: 20px;
-    margin-bottom: 30px;
-    font-size:1em;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: $shadow;
-    text-transform: uppercase;
-    transition: all 0.1s ease-in;
-
-    &:hover{
-        transform: translateY(-3px);
-        box-shadow: 0 13px 30px -1px rgb(221, 199, 255);
-    }
-}
+// END OF NAV STYLES
 
 
-.btn-prm{
-    background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
-    box-shadow: 0px 10px 20px rgb(199, 164, 255);
-    color:white;
-
-    &:hover{
-        box-shadow: 0px 13px 30px -1px rgb(193, 154, 255);
-    }
-}
-
-.btn-inner{
-    box-shadow: inset 0px 10px 20px $btn-shadow;
-    width:180px;
-    padding: 1em 2em;
-    font-size: 0.9em;
-    margin-right: 2em;
-    margin-bottom: 0;
-    
-    &:hover{
-        box-shadow: inset 0px 7px 20px -2px $btn-shadow;
-        transform:translateY(3px);
-    }
-}
-
-.btn-icon{
-    padding:10px;
-    width:auto;
-    margin-right: 0;
-
-    svg{
-        width:2em;
-        vertical-align: bottom;
-    }
-}
+// LANDING STYLES
 
 #landing{
     height:100vh;
@@ -198,17 +216,15 @@ nav{
     .container{
         display:flex;
         align-items: center;
-        justify-content: space-between;
-        overflow-y: hidden;
-        overflow:visible;
+        justify-content: space-between;      
         
         #landing-text{
             width:40%;
-            padding-left:1rem;
             overflow:visible;
+            margin-right: 2em;
             
             h1{
-                font-size: 3em;
+                font-size: 2.3em;
                 text-transform: uppercase;
                 overflow-y: hidden;
                 margin-bottom: 0.5em;  
@@ -216,60 +232,46 @@ nav{
 
             p{
                 display: inline-block;
-                width:100%;
-                font-size: 1.2em;
-                font-weight: 400;
+                font-size: 1em;
+                font-weight: medium;
                 color: rgb(134, 134, 134);
-                line-height: 1.8em;
-                margin-bottom: 5em;
+                line-height: 1.5em;
+                margin-bottom: 3em;
             }
         }
 
         #landing-svg{
-            margin-top: 5em;
-            width:60%;
+            width: 60%;
+            height: auto;
+            text-align: right;
             
             svg{
-                width:100%;
-                height:auto;
+                width: 100%;
+                height: auto;
             }
         }
     }
 }
 
-.title{
-    font-size: 3em;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 0.5em 0;
+// END OF LANDING STYLES
 
-    &::after{
-        content:'';
-        display:block;
-        height:1px;
-        width:5%;
-        background:$color-st;
-        position:absolute;
-        left:47.5%;
-    }
-}
-
+// ABOUT STYLES
 
 #about{
+    padding:0 0 150px;
+
     .card-container {
-        width:100%;
         display:flex;
-        column-gap:5em;
-        justify-content: space-between;
-        padding:3em 1em;
+        justify-content: space-around;
+        padding:3em 0;
         overflow:visible;
         
         .card {
-            width:300px;
+            width: 300px;
             background: #FFFFFF;
             box-shadow: $shadow;
             border-radius: 46px;
-            padding:3em;
+            padding:2em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -277,20 +279,21 @@ nav{
             transition: all 0.1s ease-in; 
 
             .svg-container{
-                margin-bottom:3em;
+                padding-bottom:3em;
                 padding-top:2em;
             }
             
             h2{
-                margin-bottom:1em;
-                font-size: 2em;
+                margin-bottom:0.5em;
+                font-size: 1.5em;
+                text-align: center;
             }
 
             p{
                 text-align: center;
                 color: rgb(134, 134, 134);
-                font-weight: 400;
-                font-size: 1.2em;
+                font-weight: medium;
+                font-size: 1em;
             }
 
             &:hover{
@@ -301,26 +304,31 @@ nav{
     }
 }
 
+// WORK STYLES
+
 #work{
+    // padding:0 0 150px;
+
     .work-card-container{
-        padding: 3em 1em;
+        overflow: visible;
+        padding: 3em 0;
 
         .work-card{
             display:flex;
-            // margin-bottom: 30vh;
             border-radius: 46px;
-            height: 300px;
+            height: 15em;
             box-shadow: $shadow;
+            margin-bottom: 8em;
 
             h2{
-                font-size: 2em;
+                font-size: 1.7em;
                 margin-bottom: 0.2em;
             }
 
             p{
                 color: rgb(134, 134, 134);
-                font-weight: 500;
-                font-size: 1.2em;
+                font-weight: medium;
+                font-size: 1em;
                 width: 90%;
             }          
             
@@ -328,7 +336,7 @@ nav{
                 .work-card-left{
                     width:35%;
                     background:white;
-                    padding: 2em 3em;
+                    padding: 2em 2.5em;
                     display:flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -337,6 +345,19 @@ nav{
                 .work-card-right{
                     width: 65%;
                     background:yellow;
+
+                    &::after{
+                        float: right;
+                        content:'';
+                        display: block;
+                        width: 0.8em;
+                        height: 0.8em;
+                        padding: 0.8em;
+                        background:white;
+                        border-radius: 50%;
+                        box-shadow: inset 0px 10px 20px $btn-shadow;
+                        margin: 1.5em;
+                    }
                 }
             }
 
@@ -344,12 +365,25 @@ nav{
                 .work-card-left{
                     width:65%;
                     background:blue;
+
+                    &::after{
+                        float: left;
+                        content:'';
+                        display: block;
+                        width: 0.8em;
+                        height: 0.8em;
+                        padding: 0.8em;
+                        background:white;
+                        border-radius: 50%;
+                        box-shadow: inset 0px 10px 20px $btn-shadow;
+                        margin: 1.5em;
+                    }
                 }
 
                 .work-card-right{
                     width:35%;
                     background:white;
-                    padding: 2em 3em;
+                    padding: 2em 2.5em;
                     display:flex;
                     flex-direction: column;
                     justify-content: space-between;
