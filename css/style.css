@@ -11,6 +11,12 @@
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
+  background: #3E41AE;
+}
+
+section {
+  background: white;
+  padding: 2em 0 0 0;
 }
 
 .container {
@@ -18,7 +24,6 @@ body {
   width: 100%;
   height: 100%;
   margin: auto;
-  background: white;
   overflow: visible;
 }
 
@@ -125,7 +130,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1em 0;
+  padding: 0.5em 0;
   color: black;
   font-size: 0.8em;
   text-transform: uppercase;
@@ -288,10 +293,6 @@ nav {
   height: auto;
 }
 
-#about {
-  padding: 0 0 150px;
-}
-
 #about .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,9 +352,14 @@ nav {
           box-shadow: 0 14px 40px -1px #e2cfff;
 }
 
+#work {
+  background: white;
+  border-radius: 0 0 20px 20px;
+}
+
 #work .work-card-container {
   overflow: visible;
-  padding: 3em 0;
+  padding: 3em 1em;
 }
 
 #work .work-card-container .work-card {
@@ -447,5 +453,134 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#contact {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3E41AE), color-stop(191.82%, #c045cb));
+  background: linear-gradient(180deg, #3E41AE 0, #c045cb 191.82%);
+  padding: 2em 0 3em;
+}
+
+#contact .container {
+  padding: 0 0 4em;
+}
+
+#contact .container .title {
+  color: white;
+}
+
+#contact .container .title::after {
+  background: white;
+}
+
+#contact .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: visible;
+  padding: 3em 0 2em;
+}
+
+#contact .container form * {
+  margin-bottom: 2em;
+}
+
+#contact .container form input {
+  background: white;
+  border-radius: 46px;
+  border: none;
+  padding: 1em 1em;
+  font-size: 0.8em;
+  font-family: inherit;
+  width: 400px;
+  outline: none;
+}
+
+#contact .container form textarea {
+  background: white;
+  border-radius: 30px;
+  border: none;
+  padding: 1em 1em;
+  font-size: 0.8em;
+  width: 400px;
+  font-family: inherit;
+  outline: none;
+}
+
+#contact .container form .btn {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  margin: 1em 0 0 0;
+  cursor: pointer;
+}
+
+#contact .container form .btn:hover {
+  -webkit-box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.4);
+}
+
+#footer {
+  background: white;
+}
+
+#footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#footer .container .text-container {
+  width: 20%;
+}
+
+#footer .container .text-container h3 {
+  font-size: 0.8em;
+  color: #868686;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+#footer .container .text-container p {
+  font-size: 0.8em;
+  color: #868686;
+  font-weight: medium;
+  padding-bottom: 2em;
+}
+
+#footer .container .text-container .svg-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -1em;
+}
+
+#footer .container .text-container .svg-container svg {
+  width: 1.5em;
+  fill: #868686;
+  margin-right: 0.5em;
+  -webkit-transition: fill 0.15s ease-in;
+  transition: fill 0.15s ease-in;
+}
+
+#footer .container .text-container .svg-container svg:hover {
+  fill: black;
+}
+
+#footer .copyright {
+  text-align: center;
+  font-size: 0.8em;
+  color: #868686;
+  padding: 0.8em;
 }
 /*# sourceMappingURL=style.css.map */

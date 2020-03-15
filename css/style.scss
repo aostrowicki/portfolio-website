@@ -21,6 +21,12 @@ $color-rd:rgb(133, 62, 174);
 body{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
+    background:#3E41AE;
+}
+
+section{
+    background:white;
+    padding: 2em 0 0 0;
 }
 
 .container{
@@ -28,7 +34,6 @@ body{
     width:100%;
     height:100%;
     margin:auto;
-    background:white;
     overflow:visible;
 }
 
@@ -122,7 +127,7 @@ nav{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 0;
+    padding: 0.5em 0;
     color:black;
     font-size: 0.8em;
     text-transform: uppercase;
@@ -258,7 +263,6 @@ nav{
 // ABOUT STYLES
 
 #about{
-    padding:0 0 150px;
 
     .card-container {
         display:flex;
@@ -307,11 +311,12 @@ nav{
 // WORK STYLES
 
 #work{
-    // padding:0 0 150px;
+    background: white;
+    border-radius: 0 0 20px 20px;
 
     .work-card-container{
         overflow: visible;
-        padding: 3em 0;
+        padding: 3em 1em;
 
         .work-card{
             display:flex;
@@ -391,5 +396,120 @@ nav{
             }
         }
     }
-    
+}
+
+// CONTACT STYLES
+#contact{
+    background: linear-gradient(180deg, #3E41AE 0, rgb(192, 69, 203) 191.82%);
+    padding: 2em 0 3em;
+
+    .container{
+    padding: 0 0 4em;
+
+        .title{
+            color:white;
+
+            &::after{
+                background: white;
+            }
+        }
+
+        form{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: visible;
+            padding: 3em 0 2em;
+
+            & *{
+                margin-bottom: 2em;
+            }
+
+            input{
+                background: white;
+                border-radius: 46px;
+                border:none;
+                padding: 1em 1em;
+                font-size: 0.8em;
+                font-family: inherit;
+                width:400px;
+                outline: none;
+            }
+
+            textarea{
+                background: white;
+                border-radius: 30px;
+                border:none;
+                padding: 1em 1em;
+                font-size: 0.8em;
+                width:400px;
+                font-family: inherit;
+                outline: none;
+            }
+
+            .btn{
+                box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+                margin: 1em 0 0 0;
+                cursor: pointer;
+
+                &:hover{
+                    box-shadow: 0 13px 30px -1px rgba(0,0,0,0.4);
+                }
+            }
+        }
+    }
+   
+}
+
+// FOOTER STYLES
+
+#footer{
+    background: white;
+
+    .container{
+        display:flex;
+        padding-top: 2em;
+        justify-content: space-evenly;
+
+        .text-container{
+            width: 20%;
+
+            h3{
+                font-size: 0.8em;
+                color: rgb(134, 134, 134);
+                text-transform: uppercase;
+                margin-bottom: 0.5em;
+            }
+
+            p{
+                font-size: 0.8em;
+                color: rgb(134, 134, 134);
+                font-weight: medium;
+                padding-bottom: 2em;
+            }
+
+            .svg-container{
+                display: flex;
+                margin-top: -1em;
+
+                svg{
+                    width:1.5em;
+                    fill: rgb(134, 134, 134);
+                    margin-right: 0.5em;
+                    transition: fill 0.15s ease-in;
+
+                    &:hover{
+                        fill:black;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright{
+        text-align: center;
+        font-size: 0.8em;
+        color: rgb(134, 134, 134);
+        padding: 0.8em;
+    }
 }
