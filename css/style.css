@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap");
 * {
   margin: 0;
@@ -14,9 +15,13 @@ body {
   background: #3E41AE;
 }
 
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 section {
-  background: white;
-  padding: 2em 0 0 0;
+  padding: 2em 0;
+  position: relative;
 }
 
 .container {
@@ -29,7 +34,7 @@ section {
 
 .btn {
   display: inline-block;
-  padding: 1em 0;
+  padding: 1.2em 0;
   width: 180px;
   background: white;
   color: black;
@@ -37,11 +42,11 @@ section {
   border-radius: 30px;
   margin-right: 20px;
   margin-bottom: 30px;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: bold;
   text-align: center;
-  -webkit-box-shadow: 0px 10px 20px #e7d9ff;
-          box-shadow: 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: 0px 10px 20px #efe6ff;
+          box-shadow: 0px 10px 20px #efe6ff;
   text-transform: uppercase;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
@@ -50,8 +55,15 @@ section {
 .btn:hover {
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
-  -webkit-box-shadow: 0 13px 30px -1px #ddc7ff;
-          box-shadow: 0 13px 30px -1px #ddc7ff;
+  -webkit-box-shadow: 0 13px 30px -1px #e7d9ff;
+          box-shadow: 0 13px 30px -1px #e7d9ff;
+}
+
+.btn:active {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-box-shadow: 0px 10px 20px #efe6ff;
+          box-shadow: 0px 10px 20px #efe6ff;
 }
 
 .btn-prm {
@@ -62,29 +74,40 @@ section {
 }
 
 .btn-prm:hover {
-  -webkit-box-shadow: 0px 13px 30px -1px #c19aff;
-          box-shadow: 0px 13px 30px -1px #c19aff;
+  -webkit-box-shadow: 0px 13px 30px -1px #c29dff;
+          box-shadow: 0px 13px 30px -1px #c29dff;
+}
+
+.btn-prm:active {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-box-shadow: 0px 10px 20px #c7a4ff;
+          box-shadow: 0px 10px 20px #c7a4ff;
 }
 
 .btn-inner {
-  -webkit-box-shadow: inset 0px 10px 20px #e7d9ff;
-          box-shadow: inset 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: inset 0px 10px 20px #efe6ff;
+          box-shadow: inset 0px 10px 20px #efe6ff;
   width: 180px;
-  padding: 0.8em 2em;
-  font-size: 0.8em;
+  padding: 1.2em 2em;
   margin-right: 2em;
   margin-bottom: 0;
 }
 
 .btn-inner:hover {
-  -webkit-box-shadow: inset 0px 7px 20px -2px #e7d9ff;
-          box-shadow: inset 0px 7px 20px -2px #e7d9ff;
+  -webkit-box-shadow: inset 0px 7px 20px -2px #efe6ff;
+          box-shadow: inset 0px 7px 20px -2px #efe6ff;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
+.btn-inner:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
 .btn-icon {
-  padding: 10px;
+  padding: 1em;
   width: auto;
   margin-right: 0;
 }
@@ -98,13 +121,12 @@ section {
   font-size: 2em;
   text-transform: uppercase;
   text-align: center;
-  margin: 0 0 0.5em 0;
 }
 
 .title::after {
   content: '';
   display: block;
-  height: 1px;
+  height: 2px;
   width: 5%;
   background: #3E41AE;
   position: absolute;
@@ -130,11 +152,11 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5em 0;
+  padding: 1em 0;
   color: black;
   font-size: 0.8em;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   background: white;
 }
 
@@ -246,6 +268,7 @@ nav {
 #landing {
   height: 100vh;
   width: 100%;
+  background: white;
 }
 
 #landing .container {
@@ -271,12 +294,13 @@ nav {
   text-transform: uppercase;
   overflow-y: hidden;
   margin-bottom: 0.5em;
+  line-height: 1.2em;
 }
 
 #landing .container #landing-text p {
   display: inline-block;
   font-size: 1em;
-  font-weight: medium;
+  font-weight: 400;
   color: #868686;
   line-height: 1.5em;
   margin-bottom: 3em;
@@ -293,6 +317,11 @@ nav {
   height: auto;
 }
 
+#about {
+  background: white;
+  padding: 2em 0 4em;
+}
+
 #about .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -306,8 +335,8 @@ nav {
 #about .card-container .card {
   width: 300px;
   background: #FFFFFF;
-  -webkit-box-shadow: 0px 10px 20px #e7d9ff;
-          box-shadow: 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: 0px 10px 20px #efe6ff;
+          box-shadow: 0px 10px 20px #efe6ff;
   border-radius: 46px;
   padding: 2em;
   display: -webkit-box;
@@ -320,41 +349,53 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 
 #about .card-container .card .svg-container {
-  padding-bottom: 3em;
-  padding-top: 2em;
+  padding-bottom: 4em;
+  padding-top: 3em;
+}
+
+#about .card-container .card .svg-container svg {
+  width: auto;
+  height: 4.5em;
+  fill: red;
 }
 
 #about .card-container .card h2 {
-  margin-bottom: 0.5em;
-  font-size: 1.5em;
+  margin-bottom: 0.6em;
+  font-size: 1.4em;
   text-align: center;
 }
 
 #about .card-container .card p {
   text-align: center;
   color: #868686;
-  font-weight: medium;
+  font-weight: 400;
   font-size: 1em;
 }
 
 #about .card-container .card:hover {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
-  -webkit-box-shadow: 0 14px 40px -1px #e2cfff;
-          box-shadow: 0 14px 40px -1px #e2cfff;
+  -webkit-box-shadow: 0 13px 30px -1px #e7d9ff;
+          box-shadow: 0 13px 30px -1px #e7d9ff;
+}
+
+#about #about-s {
+  position: absolute;
+  top: -3em;
 }
 
 #work {
-  background: white;
   border-radius: 0 0 20px 20px;
+  background: white;
+  padding: 2em 0 6em;
 }
 
 #work .work-card-container {
@@ -368,19 +409,22 @@ nav {
   display: flex;
   border-radius: 46px;
   height: 15em;
-  -webkit-box-shadow: 0px 10px 20px #e7d9ff;
-          box-shadow: 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: 0px 10px 20px #efe6ff;
+          box-shadow: 0px 10px 20px #efe6ff;
+}
+
+#work .work-card-container .work-card:not(:last-child) {
   margin-bottom: 8em;
 }
 
 #work .work-card-container .work-card h2 {
-  font-size: 1.7em;
-  margin-bottom: 0.2em;
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
 }
 
 #work .work-card-container .work-card p {
   color: #868686;
-  font-weight: medium;
+  font-weight: 400;
   font-size: 1em;
   width: 90%;
 }
@@ -403,7 +447,7 @@ nav {
 
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-right {
   width: 65%;
-  background: yellow;
+  background: grey;
 }
 
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-right::after {
@@ -415,14 +459,14 @@ nav {
   padding: 0.8em;
   background: white;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0px 10px 20px #e7d9ff;
-          box-shadow: inset 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: inset 0px 10px 20px #efe6ff;
+          box-shadow: inset 0px 10px 20px #efe6ff;
   margin: 1.5em;
 }
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-left {
   width: 65%;
-  background: blue;
+  background: grey;
 }
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-left::after {
@@ -434,8 +478,8 @@ nav {
   padding: 0.8em;
   background: white;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0px 10px 20px #e7d9ff;
-          box-shadow: inset 0px 10px 20px #e7d9ff;
+  -webkit-box-shadow: inset 0px 10px 20px #efe6ff;
+          box-shadow: inset 0px 10px 20px #efe6ff;
   margin: 1.5em;
 }
 
@@ -453,6 +497,11 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#work #work-s {
+  position: absolute;
+  top: -3em;
 }
 
 #contact {
@@ -485,7 +534,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   overflow: visible;
-  padding: 3em 0 2em;
+  padding: 4em 0 2em;
 }
 
 #contact .container form * {
@@ -505,7 +554,7 @@ nav {
 
 #contact .container form textarea {
   background: white;
-  border-radius: 30px;
+  border-radius: 27px;
   border: none;
   padding: 1em 1em;
   font-size: 0.8em;
@@ -515,15 +564,25 @@ nav {
 }
 
 #contact .container form .btn {
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   margin: 1em 0 0 0;
   cursor: pointer;
 }
 
 #contact .container form .btn:hover {
-  -webkit-box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 13px 30px -1px rgba(0, 0, 0, 0.3);
+}
+
+#contact .container form .btn:active {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contact #contact-s {
+  position: absolute;
+  top: -3em;
 }
 
 #footer {
@@ -549,12 +608,13 @@ nav {
   color: #868686;
   text-transform: uppercase;
   margin-bottom: 0.5em;
+  font-weight: 600;
 }
 
 #footer .container .text-container p {
   font-size: 0.8em;
   color: #868686;
-  font-weight: medium;
+  font-weight: 400;
   padding-bottom: 2em;
 }
 
@@ -581,6 +641,6 @@ nav {
   text-align: center;
   font-size: 0.8em;
   color: #868686;
-  padding: 0.8em;
+  padding: 1.2em;
 }
 /*# sourceMappingURL=style.css.map */
