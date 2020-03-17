@@ -236,35 +236,27 @@ nav{
         justify-content: space-between;      
         
         #landing-text{
-            width:40%;
+            width:35%;
             overflow:visible;
-            margin-right: 2em;
-            padding-top: 8em;
+            padding-top: 2em;
             
             h1{
                 font-size: 2.3em;
                 text-transform: uppercase;
                 overflow-y: hidden;
-                margin-bottom: 0.5em;  
                 line-height: 1.2em;
             }
 
-            p{
-                display: inline-block;
-                font-size: 1em;
-                font-weight: 400;
-                color: rgb(134, 134, 134);
-                line-height: 1.5em;
-                margin-bottom: 3em;
-            }
-
             .landing-links{
-                margin-top: 2em;
+                margin-top: 1em;
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.5em;
+                margin-bottom: 3em;
+                line-height: 1.5em;
 
                 .link{
-                    display:flex;
-                    align-items: center;
-                    padding: 0.5em 0;   
 
                     a{
                         text-decoration: none;
@@ -278,8 +270,8 @@ nav{
                         svg{
                             width: 30px;
                             height: 30px;
-                            fill: rgb(179, 179, 179);
-                            margin-right: 0.4em;
+                            fill: rgb(180, 180, 180);
+                            margin-right: 0.3em;
                             vertical-align: bottom;
                             transition: 0.1s fill ease-in; 
                         }
@@ -359,6 +351,7 @@ nav{
                 color: rgb(134, 134, 134);
                 font-weight: 400;
                 font-size: 1em;
+                padding-bottom: 0.5em;
             }
 
             &:hover{
@@ -592,8 +585,8 @@ nav{
 
     .copyright{
         text-align: center;
-        font-size: 0.8em;
-        color: rgb(134, 134, 134);
+        font-size: 0.7em;
+        color: rgb(180, 180, 180);
         padding: 0 0 1.2em;
     }
 }

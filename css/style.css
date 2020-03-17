@@ -277,41 +277,32 @@ nav {
 }
 
 #landing .container #landing-text {
-  width: 40%;
+  width: 35%;
   overflow: visible;
-  margin-right: 2em;
-  padding-top: 8em;
+  padding-top: 2em;
 }
 
 #landing .container #landing-text h1 {
   font-size: 2.3em;
   text-transform: uppercase;
   overflow-y: hidden;
-  margin-bottom: 0.5em;
   line-height: 1.2em;
 }
 
-#landing .container #landing-text p {
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 400;
-  color: #868686;
-  line-height: 1.5em;
-  margin-bottom: 3em;
-}
-
 #landing .container #landing-text .landing-links {
-  margin-top: 2em;
-}
-
-#landing .container #landing-text .landing-links .link {
+  margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5em 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  line-height: 1.5em;
 }
 
 #landing .container #landing-text .landing-links .link a {
@@ -328,8 +319,8 @@ nav {
 #landing .container #landing-text .landing-links .link a svg {
   width: 30px;
   height: 30px;
-  fill: #b3b3b3;
-  margin-right: 0.4em;
+  fill: #b4b4b4;
+  margin-right: 0.3em;
   vertical-align: bottom;
   -webkit-transition: 0.1s fill ease-in;
   transition: 0.1s fill ease-in;
@@ -415,6 +406,7 @@ nav {
   color: #868686;
   font-weight: 400;
   font-size: 1em;
+  padding-bottom: 0.5em;
 }
 
 #about .card-container .card:hover {
@@ -676,8 +668,8 @@ nav {
 
 #footer .copyright {
   text-align: center;
-  font-size: 0.8em;
-  color: #868686;
+  font-size: 0.7em;
+  color: #b4b4b4;
   padding: 0 0 1.2em;
 }
 /*# sourceMappingURL=style.css.map */
