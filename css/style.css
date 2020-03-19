@@ -20,7 +20,7 @@ h1 {
 }
 
 section {
-  padding: 2em 0;
+  padding: 2em 3em;
   position: relative;
 }
 
@@ -51,12 +51,12 @@ section .title::after {
 .btn {
   display: inline-block;
   padding: 1.2em 0;
-  width: 180px;
+  width: 45%;
+  max-width: 180px;
   background: white;
   color: black;
   text-decoration: none;
   border-radius: 30px;
-  margin-right: 20px;
   margin-bottom: 30px;
   font-size: 0.7em;
   font-weight: bold;
@@ -87,6 +87,7 @@ section .title::after {
   -webkit-box-shadow: 0px 10px 20px #c7a4ff;
           box-shadow: 0px 10px 20px #c7a4ff;
   color: white;
+  margin-right: 20px;
 }
 
 .btn-prm:hover {
@@ -138,6 +139,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 3;
+  padding: 0 3em;
 }
 
 .nav-container {
@@ -280,6 +282,7 @@ nav {
   width: 35%;
   overflow: visible;
   padding-top: 2em;
+  z-index: 1;
 }
 
 #landing .container #landing-text h1 {
@@ -300,9 +303,12 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5em;
   margin-bottom: 3em;
   line-height: 1.5em;
+}
+
+#landing .container #landing-text .landing-links .link {
+  padding-right: 0.8em;
 }
 
 #landing .container #landing-text .landing-links .link a {
@@ -347,7 +353,7 @@ nav {
 
 #about {
   background: white;
-  padding: 2em 0 4em;
+  padding: 2em 4em 4em;
 }
 
 #about .card-container {
@@ -361,12 +367,13 @@ nav {
 }
 
 #about .card-container .card {
-  width: 300px;
+  max-width: 300px;
+  width: 30%;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 10px 20px #efe6ff;
           box-shadow: 0px 10px 20px #efe6ff;
   border-radius: 46px;
-  padding: 2em;
+  padding: 2em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -385,14 +392,13 @@ nav {
 }
 
 #about .card-container .card .svg-container {
-  padding-bottom: 4em;
-  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-top: 2em;
 }
 
 #about .card-container .card .svg-container svg {
   width: auto;
   height: 4.5em;
-  fill: red;
 }
 
 #about .card-container .card h2 {
@@ -406,7 +412,6 @@ nav {
   color: #868686;
   font-weight: 400;
   font-size: 1em;
-  padding-bottom: 0.5em;
 }
 
 #about .card-container .card:hover {
@@ -424,12 +429,12 @@ nav {
 #work {
   border-radius: 0 0 20px 20px;
   background: white;
-  padding: 2em 0 6em;
+  padding: 2em 4em 6em;
 }
 
 #work .work-card-container {
   overflow: visible;
-  padding: 3em 1em;
+  padding: 3em 0em;
 }
 
 #work .work-card-container .work-card {
@@ -460,6 +465,7 @@ nav {
 
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-left {
   width: 35%;
+  min-width: 370px;
   background: white;
   padding: 2em 2.5em;
   display: -webkit-box;
@@ -476,7 +482,9 @@ nav {
 
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-right {
   width: 65%;
-  background: grey;
+  background: url(/assets/ocean-school.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-right::after {
@@ -495,7 +503,9 @@ nav {
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-left {
   width: 65%;
-  background: grey;
+  background: url(/assets/ocean-school.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-left::after {
@@ -514,6 +524,7 @@ nav {
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-right {
   width: 35%;
+  min-width: 370px;
   background: white;
   padding: 2em 2.5em;
   display: -webkit-box;
@@ -596,6 +607,7 @@ nav {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   margin: 1em 0 0 0;
+  max-width: unset;
   cursor: pointer;
 }
 
@@ -630,6 +642,7 @@ nav {
 
 #footer .container .text-container {
   width: 20%;
+  overflow: visible;
 }
 
 #footer .container .text-container h3 {
@@ -645,6 +658,7 @@ nav {
   color: #868686;
   font-weight: 400;
   padding-bottom: 2em;
+  overflow: visible;
 }
 
 #footer .container .text-container .svg-container {
@@ -671,5 +685,157 @@ nav {
   font-size: 0.7em;
   color: #b4b4b4;
   padding: 0 0 1.2em;
+}
+
+@media screen and (max-width: 1110px) {
+  body {
+    font-size: 18px;
+  }
+  #footer {
+    padding: 0 4em;
+  }
+  #footer .container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #footer .container .text-container {
+    width: auto;
+    min-width: 30%;
+    padding-right: 2em;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  #landing .container #landing-text {
+    width: 40%;
+  }
+  #landing .container #landing-svg {
+    padding-left: 1em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #landing .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #landing .container #landing-text {
+    padding-top: 10vh;
+    width: 100%;
+  }
+  #landing .container #landing-text .landing-links {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #landing .container #landing-svg {
+    width: 100%;
+    position: absolute;
+    bottom: 2em;
+    right: 0;
+  }
+  #landing .container #landing-svg img {
+    height: 48vh;
+    width: auto;
+  }
+  #about .card-container {
+    display: block;
+    padding: 0;
+  }
+  #about .card-container .card {
+    width: auto;
+    margin: 3em auto 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    font-size: 16px;
+  }
+  nav {
+    padding: 0 1em;
+  }
+  nav .nav-container .list {
+    display: none;
+  }
+  #landing {
+    padding: 2em 2em;
+  }
+  #about {
+    padding: 2em 2em 4em;
+  }
+  #work {
+    padding: 2em 2em 6em;
+  }
+  #work .work-card-container .work-card {
+    min-height: 60vh;
+    height: auto;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #work .work-card-container .work-card .btn-inner {
+    width: auto;
+  }
+  #work .work-card-container .work-card p {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  #work .work-card-container .work-card:nth-of-type(odd) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #work .work-card-container .work-card:nth-of-type(odd) .work-card-left {
+    width: 100%;
+    padding: 2em 2em;
+    min-width: unset;
+  }
+  #work .work-card-container .work-card:nth-of-type(odd) .work-card-right {
+    width: 100%;
+    height: 35vh;
+  }
+  #work .work-card-container .work-card:nth-of-type(odd) .work-card-right::after {
+    float: left;
+  }
+  #work .work-card-container .work-card:nth-of-type(even) .work-card-left {
+    width: 100%;
+    height: 35vh;
+  }
+  #work .work-card-container .work-card:nth-of-type(even) .work-card-right {
+    width: 100%;
+    padding: 2em 2em;
+    min-width: unset;
+  }
+  #footer .container .text-container:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #landing .container #landing-text {
+    margin: auto 0;
+  }
+  #landing .container #landing-svg {
+    display: none;
+  }
+  #contact .container {
+    padding: 0 2em 4em;
+  }
+  #contact .container form input {
+    width: 95%;
+  }
+  #contact .container form textarea {
+    width: 95%;
+  }
+  #footer {
+    padding: 0 2em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

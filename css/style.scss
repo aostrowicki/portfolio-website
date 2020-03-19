@@ -31,7 +31,7 @@ h1{
 }
 
 section{
-    padding: 2em 0;
+    padding: 2em 3em;
     position: relative;
 
     .title{
@@ -62,12 +62,12 @@ section{
 .btn{
     display: inline-block;
     padding: 1.2em 0;
-    width: 180px;
+    width: 45%;
+    max-width: 180px;
     background: white;
     color: black;
     text-decoration: none;  
     border-radius: 30px;
-    margin-right: 20px;
     margin-bottom: 30px;
     font-size:0.7em;
     font-weight: bold;
@@ -91,6 +91,7 @@ section{
     background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
     box-shadow: 0px 10px 20px rgb(199, 164, 255);
     color:white;
+    margin-right: 20px;
 
     &:hover{
         box-shadow: 0px 13px 30px -1px rgb(194, 157, 255);
@@ -103,7 +104,7 @@ section{
 }
 
 .btn-inner{
-    box-shadow: inset 0px 10px 20px $btn-shadow;
+    box-shadow: inset 0px 10px 20px $btn-shadow;  //or rgb(245, 239, 255)
     width:180px;
     padding: 1.2em 2em;
     margin-right: 2em;
@@ -137,6 +138,7 @@ nav{
     position: fixed;
     width: 100%;
     z-index: 3;
+    padding: 0 3em;
 }
 
 .nav-container{
@@ -239,6 +241,7 @@ nav{
             width:35%;
             overflow:visible;
             padding-top: 2em;
+            z-index: 1;
             
             h1{
                 font-size: 2.3em;
@@ -252,11 +255,11 @@ nav{
                 display:flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0.5em;
                 margin-bottom: 3em;
                 line-height: 1.5em;
 
                 .link{
+                    padding-right: 0.8em;
 
                     a{
                         text-decoration: none;
@@ -309,7 +312,7 @@ nav{
 
 #about{
     background: white;
-    padding: 2em 0 4em;
+    padding: 2em 4em 4em;
 
     .card-container {
         display:flex;
@@ -318,11 +321,12 @@ nav{
         overflow:visible;
         
         .card {
-            width: 300px;
+            max-width: 300px;
+            width: 30%;
             background: #FFFFFF;
             box-shadow: $shadow;
             border-radius: 46px;
-            padding:2em;
+            padding:2em 1em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -330,13 +334,12 @@ nav{
             transition: all 0.1s ease-in; 
 
             .svg-container{
-                padding-bottom:4em;
-                padding-top:3em;
+                padding-bottom:3em;
+                padding-top:2em;
 
                 svg{
                     width: auto;
                     height: 4.5em;
-                    fill: red;
                 }
             }
             
@@ -351,7 +354,6 @@ nav{
                 color: rgb(134, 134, 134);
                 font-weight: 400;
                 font-size: 1em;
-                padding-bottom: 0.5em;
             }
 
             &:hover{
@@ -372,11 +374,11 @@ nav{
 #work{
     border-radius: 0 0 20px 20px;
     background: white;
-    padding: 2em 0 6em;
+    padding: 2em 4em 6em;
 
     .work-card-container{
         overflow: visible;
-        padding: 3em 1em;
+        padding: 3em 0em;
 
         .work-card{
             display:flex;
@@ -403,6 +405,7 @@ nav{
             &:nth-of-type(odd){
                 .work-card-left{
                     width:35%;
+                    min-width: 370px;
                     background:white;
                     padding: 2em 2.5em;
                     display:flex;
@@ -412,7 +415,9 @@ nav{
 
                 .work-card-right{
                     width: 65%;
-                    background:grey;
+                    background:url(/assets/ocean-school.jpg);
+                    background-size: cover;
+                    background-position: center;
 
                     &::after{
                         float: right;
@@ -432,7 +437,9 @@ nav{
             &:nth-of-type(even){
                 .work-card-left{
                     width:65%;
-                    background:grey;
+                    background:url(/assets/ocean-school.jpg);
+                    background-size: cover;
+                    background-position: center;
 
                     &::after{
                         float: left;
@@ -450,6 +457,7 @@ nav{
 
                 .work-card-right{
                     width:35%;
+                    min-width: 370px;
                     background:white;
                     padding: 2em 2.5em;
                     display:flex;
@@ -518,6 +526,7 @@ nav{
             .btn{
                 box-shadow: 0 10px 20px rgba(0,0,0,0.2);
                 margin: 1em 0 0 0;
+                max-width: unset;
                 cursor: pointer;
 
                 &:hover{
@@ -541,14 +550,15 @@ nav{
 
 #footer{
     background: white;
-
+    
     .container{
         display:flex;
         padding-top: 2em;
         justify-content: space-evenly;
-
+        
         .text-container{
             width: 20%;
+            overflow: visible;
 
             h3{
                 font-size: 0.8em;
@@ -563,6 +573,7 @@ nav{
                 color: rgb(134, 134, 134);
                 font-weight: 400;
                 padding-bottom: 2em;
+                overflow: visible;
             }
 
             .svg-container{
@@ -588,5 +599,221 @@ nav{
         font-size: 0.7em;
         color: rgb(180, 180, 180);
         padding: 0 0 1.2em;
+    }
+}
+
+
+@media screen and (max-width: 1110px){
+    body{
+        font-size: 18px;
+    }
+    
+    #footer{
+        padding: 0 4em;
+
+        .container{
+            justify-content: space-between; 
+
+            .text-container{
+                width: auto;
+                min-width:30%;
+                padding-right: 2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px){
+   #landing{
+
+        .container{
+
+            #landing-text{
+                width: 40%;
+            }
+            #landing-svg{
+                padding-left: 1em;
+            }
+        }
+   }
+}
+
+@media screen and (max-width: 800px){
+
+    #landing{
+
+        .container{
+            flex-direction: column;
+
+            #landing-text{
+                padding-top: 10vh;
+                width:100%;
+
+                .landing-links{
+                    justify-content: flex-start;
+                }
+            }
+            #landing-svg{
+                width: 100%;
+                position: absolute;
+                // overflow: visible;
+                bottom:2em;
+                right:0;
+
+                img{
+                    height: 48vh;
+                    width:auto;
+                    // overflow: visible;
+                }
+            }
+        }
+    }
+
+    #about{
+
+        .card-container{
+            display: block;
+            padding:0;
+            
+            .card{
+                width:auto;
+                margin: 3em auto 0;
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 650px){
+    body{
+        font-size: 16px;
+    }
+
+    nav{
+        padding: 0 1em;
+        
+        .nav-container{
+
+            .list{
+                display:none;
+            }
+        }
+    }
+
+    #landing{
+        padding: 2em 2em;
+    }
+
+    #about{
+        padding: 2em 2em 4em;
+    }
+
+    #work{
+        padding: 2em 2em 6em;
+    }
+
+
+    #work{
+        .work-card-container{
+
+            .work-card{
+                min-height: 60vh;
+                height:auto;
+                width: 100%;
+                flex-direction: column;
+
+                .btn-inner{
+                    width: auto;
+                }
+
+                p{
+                    width: 100%;
+                    margin-bottom: 2em;
+                }
+
+                &:nth-of-type(odd){
+                    flex-direction: column-reverse;
+
+                    .work-card-left{
+                        width: 100%;
+                        padding: 2em 2em;
+                        min-width: unset;
+                    }
+
+                    .work-card-right{
+                        width: 100%;
+                        height: 35vh;
+
+                        &::after{
+                            float:left;
+                        }
+                    }                 
+                } 
+
+                &:nth-of-type(even){
+                    .work-card-left{
+                        width: 100%;
+                        height: 35vh;
+                    }
+
+                    .work-card-right{
+                        width: 100%;
+                        padding: 2em 2em;
+                        min-width: unset;
+                    }                 
+                }
+            }
+        }
+    }
+
+    #footer{
+
+        .container{
+
+            .text-container{
+                &:first-child{
+                    display:none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:420px){
+
+    #landing{
+
+        .container{
+
+            #landing-text{
+                margin: auto 0;
+            }
+            #landing-svg{
+                display:none;
+            }
+        }
+    }
+
+    #contact{
+
+        .container{
+            padding: 0 2em 4em;
+
+            form{
+
+                input{
+                    width: 95%;
+                }
+
+                textarea{
+                    width: 95%;
+                }
+            }
+        }
+    }
+
+    #footer{
+        padding: 0 2em;
     }
 }
