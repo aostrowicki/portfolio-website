@@ -134,6 +134,42 @@ section .title::after {
   vertical-align: bottom;
 }
 
+@media screen and (min-width: 800px) {
+  .anim {
+    opacity: 0;
+  }
+  .animate {
+    -webkit-animation: anim1 1s forwards ease-out;
+            animation: anim1 1s forwards ease-out;
+  }
+}
+
+@-webkit-keyframes anim1 {
+  from {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes anim1 {
+  from {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 nav {
   background: white;
   position: fixed;
@@ -264,6 +300,7 @@ nav {
   height: 100vh;
   width: 100%;
   background: white;
+  overflow: hidden;
 }
 
 #landing .container {
