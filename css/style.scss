@@ -1,13 +1,8 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    overflow-x: hidden;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:500&display=swap');
+
+
 
 // VARIABLES
 
@@ -18,7 +13,16 @@ $color-st:#3E41AE;
 $color-nd:#CB4599;
 $color-rd:rgb(133, 62, 174);
 
+
+
 // GLOBAL STYLES
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    overflow-x: hidden;
+}
 
 body{
     font-family: 'Nunito', sans-serif;
@@ -88,18 +92,16 @@ section{
 }
 
 .btn-prm{
-    background: linear-gradient(118.68deg, $color-st 0.94%, $color-nd 94.42%);
-    box-shadow: 0px 10px 20px rgb(199, 164, 255);
-    color:white;
-    margin-right: 20px;
+
+}
+
+.btn-landing{
+    color:black;
+    background:white;
+    box-shadow: 0px 10px 20px #713D89;
 
     &:hover{
-        box-shadow: 0px 13px 30px -1px rgb(194, 157, 255);
-    }
-
-    &:active{
-        transform: translateY(0px);
-        box-shadow: 0px 10px 20px rgb(199, 164, 255);
+        box-shadow: 0px 13px 30px -1px #5A2787;
     }
 }
 
@@ -116,7 +118,7 @@ section{
     }
 
     &:active{
-        transform: translateY(5px);
+        transform: translateY( 5px);
     }
 }
 
@@ -132,32 +134,11 @@ section{
 }
 
 
-@media screen and (min-width: 800px){
-    .anim{
-        opacity: 0;
-    }
-
-    .animate{
-        animation: anim1 1s forwards ease-out;
-    }
-}
-
-@keyframes anim1{
-    from{
-        transform: translateY(50px);
-        opacity:0;
-    }
-    to{
-        transform: translateY(0px);
-        opacity:1;
-    }
-}
 
 // NAV STYLES
 
 nav{
-    background:white;
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 3;
     padding: 0 3em;
@@ -170,24 +151,22 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 1em 0;
-    color:black;
     font-size: 0.8em;
     text-transform: uppercase;
     font-weight: 600;
-    background: white;
 
     #logo a{
         text-transform: lowercase;
         font-size: 1.6em;
         font-family: 'Maven Pro', sans-serif;
         font-weight: medium;
-        color:black;
+        color:white;
         letter-spacing: -0.05em;
         text-decoration: none;   
     }
 
     #logo:first-letter{
-        color: $color-st;
+        color: rgba(255,255,255,0.7);
     }
 
     .list{
@@ -196,13 +175,12 @@ nav{
         
         a {
             text-decoration: none;
-            color:black;
+            color:white;
             margin-left:1.5em;
             padding:12px 4px;
             position: relative;
 
             &:hover{
-                animation: colors 0.8s ease-in-out forwards;
                 &::after{
                     animation: lines 0.8s ease-out forwards;
                 }
@@ -220,31 +198,20 @@ nav{
     }
 }
 
-@keyframes colors{
-    25% {
-        fill:$color-st;
-        color:$color-st;
-    }
-    100%{
-        fill:$color-rd;
-        color:$color-rd;
-    }
-}
 
 @keyframes lines{
     25% {
-        background:$color-st;
+        background:white;
         width:40%;
         left:30%;
     }
     100%{
-        background:$color-rd;
+        background:white;
         width:75%;
         left:12.5%;
     }
 }
 
-// END OF NAV STYLES
 
 
 // LANDING STYLES
@@ -252,29 +219,41 @@ nav{
 #landing{
     height:100vh;
     width:100%;
-    background: white;
-    overflow: hidden; 
+    overflow: hidden;
+    background: linear-gradient(130.04deg, #CB4599 -8.2%, #3E41AE 89.8%);
 
     .container{
         display:flex;
         align-items: center;
         justify-content: space-between;  
-
+       
         #landing-text{
             width:35%;
             overflow:visible;
             padding-top: 2em;
-            z-index: 1;
             
             h1{
                 font-size: 2.3em;
                 text-transform: uppercase;
                 overflow-y: hidden;
                 line-height: 1.2em;
+                color:white;
+            }
+
+            h2{
+                color: rgba(255,255,255,1);
+                font-size: 1em;
+            }
+
+            .btn-container{
+                overflow: visible;
+                width: 90%;
+                display:flex;
+                justify-content: space-between;
             }
 
             .landing-links{
-                margin-top: 1em;
+                margin-top: 2em;
                 display:flex;
                 align-items: center;
                 justify-content: space-between;
@@ -289,14 +268,14 @@ nav{
 
                         span{
                             font-size: 1em;
-                            color: rgb(180, 180, 180);
+                            color: rgba(255,255,255,0.5);
                             transition: 0.1s color ease-in;
                         }
 
                         svg{
                             width: 30px;
                             height: 30px;
-                            fill: rgb(180, 180, 180);
+                            fill: rgba(255,255,255,0.5);
                             margin-right: 0.3em;
                             vertical-align: bottom;
                             transition: 0.1s fill ease-in; 
@@ -305,31 +284,32 @@ nav{
 
                     a:hover{
                         span{
-                            color:black;
+                            color:white;
                         }
 
                         svg{
-                            fill:black;
+                            fill:white;
                         }
                     }
                 }
             }
         }
+    }
 
-        #landing-svg{
-            width: 60%;
-            height: auto;
-            text-align: right;
-            
-            img{
-                width: 100%;
-                height: auto;
-            }
-        }
+    #landing-svg {
+        position: absolute;
+        bottom:0;
+        width: 100%;  
+        height: 80%;
+        background: url(/assets/hero-bg.svg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: -3em;
+        z-index: 0;
     }
 }
 
-// END OF LANDING STYLES
+
 
 // ABOUT STYLES
 
@@ -391,6 +371,8 @@ nav{
         top:-3em;
     }
 }
+
+
 
 // WORK STYLES
 
@@ -497,6 +479,8 @@ nav{
     }
 }
 
+
+
 // CONTACT STYLES
 #contact{
     background: linear-gradient(180deg, #3E41AE 0, rgb(192, 69, 203) 191.82%);
@@ -569,6 +553,8 @@ nav{
     }
 }
 
+
+
 // FOOTER STYLES
 
 #footer{
@@ -626,6 +612,9 @@ nav{
 }
 
 
+
+// RESPONSIVENESS
+
 @media screen and (max-width: 1110px){
     body{
         font-size: 18px;
@@ -671,25 +660,28 @@ nav{
             #landing-text{
                 padding-top: 10vh;
                 width:100%;
+                z-index: 1;
+
+                .btn-container{
+                    justify-content: start;
+
+                    .btn-prm{
+                        margin-right: 2em;
+                    }
+                }
 
                 .landing-links{
                     justify-content: flex-start;
-                }
-            }
-            #landing-svg{
-                width: 100%;
-                position: absolute;
-                // overflow: visible;
-                bottom:2em;
-                right:0;
-
-                img{
-                    height: 48vh;
-                    width:auto;
-                    // overflow: visible;
-                }
+                }          
             }
         }
+
+            #landing-svg{
+                height: 60%;
+                background: url(/assets/hero-bg-center.svg) no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
     }
 
     #about{
@@ -724,20 +716,14 @@ nav{
         }
     }
 
-    #landing{
-        padding: 2em 2em;
-    }
-
     #about{
         padding: 2em 2em 4em;
     }
 
+
     #work{
         padding: 2em 2em 6em;
-    }
 
-
-    #work{
         .work-card-container{
 
             .work-card{
@@ -806,16 +792,23 @@ nav{
 @media screen and (max-width:420px){
 
     #landing{
+        padding: 2em 2em;
 
         .container{
 
-            #landing-text{
-                margin: auto 0;
-            }
-            #landing-svg{
-                display:none;
+        #landing-text{
+
+            .landing-links{
+                margin-top: 1em;
             }
         }
+    }
+
+
+        #landing-svg{
+            height: 45%;
+            margin-left: -2em;
+        }   
     }
 
     #contact{
@@ -838,5 +831,30 @@ nav{
 
     #footer{
         padding: 0 2em;
+    }
+}
+
+
+
+// ANIMATIONS
+
+@media screen and (min-width: 800px){
+    .anim{
+        opacity: 0;
+    }
+
+    .animate{
+        animation: anim1 1s forwards ease-out;
+    }
+}
+
+@keyframes anim1{
+    from{
+        transform: translateY(50px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity:1;
     }
 }
