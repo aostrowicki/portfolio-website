@@ -1,7 +1,7 @@
 const anims = document.querySelectorAll('.anim');
 
 observerOptions={
-    threshold: 0.9,
+    threshold: 0.8,
     
 };
 

@@ -6,12 +6,13 @@
 
 // VARIABLES
 
-$btn-shadow: rgb(239, 230, 255);
-$shadow: 0px 10px 20px $btn-shadow;
-$shadow-hover: 0 13px 30px -1px rgb(231, 217, 255);
+$btn-shadow: 0px 11px 36px rgba(0, 0, 0, 0.2);
+$btn-shadow-hover: 0px 14px 36px rgba(0, 0, 0, 0.2);
+$card-shadow: 0px 40px 140px rgba(130, 130, 130, 0.15);
+$card-shadow-light: 0px 40px 140px rgba(130, 130, 130, 0.05);
 $color-st:#3E41AE;
 $color-nd:#CB4599;
-$color-rd:rgb(133, 62, 174);
+$color-rd:#942ABC;
 
 
 
@@ -72,60 +73,36 @@ section{
     color: black;
     text-decoration: none;  
     border-radius: 30px;
-    margin-bottom: 30px;
     font-size:0.7em;
     font-weight: bold;
     text-align: center;
-    box-shadow: $shadow;
+    box-shadow: $btn-shadow;
     text-transform: uppercase;
     transition: all 0.1s ease-in;
 
     &:hover{
         transform: translateY(-3px);
-        box-shadow: $shadow-hover;
+        box-shadow: $btn-shadow-hover;
     }
 
     &:active{
         transform: translateY(0px);
-        box-shadow: $shadow;
+        box-shadow: $btn-shadow;
     }
 }
 
-.btn-prm{
-
-}
-
-.btn-landing{
-    color:black;
-    background:white;
-    box-shadow: 0px 10px 20px #713D89;
-
-    &:hover{
-        box-shadow: 0px 13px 30px -1px #5A2787;
-    }
-}
-
-.btn-inner{
-    box-shadow: inset 0px 10px 20px $btn-shadow;  //or rgb(245, 239, 255)
-    width:180px;
-    padding: 1.2em 2em;
-    margin-right: 2em;
-    margin-bottom: 0;
-    
-    &:hover{
-        box-shadow: inset 0px 7px 20px -2px $btn-shadow;
-        transform:translateY(3px);
-    }
-
-    &:active{
-        transform: translateY( 5px);
-    }
+.btn-color{
+    margin-top: 4em;
+    background: linear-gradient(270deg, $color-st -6.43%, $color-rd 109.52%);
+    color:white;
 }
 
 .btn-icon{
     padding:1em;
     width:auto;
-    margin-right: 0;
+    margin-left: 2em;
+    fill:white;
+    background: #3E41AE;
 
     svg{
         width:1.8em;
@@ -179,6 +156,7 @@ nav{
             margin-left:1.5em;
             padding:12px 4px;
             position: relative;
+            font-weight: 500;
 
             &:hover{
                 &::after{
@@ -220,7 +198,7 @@ nav{
     height:100vh;
     width:100%;
     overflow: hidden;
-    background: linear-gradient(130.04deg, #CB4599 -8.2%, #3E41AE 89.8%);
+    background: linear-gradient(130.04deg, $color-rd -8.2%, $color-st 89.8%);
 
     .container{
         display:flex;
@@ -230,7 +208,6 @@ nav{
         #landing-text{
             width:35%;
             overflow:visible;
-            padding-top: 2em;
             
             h1{
                 font-size: 2.3em;
@@ -314,7 +291,7 @@ nav{
 // ABOUT STYLES
 
 #about{
-    background: white;
+    background: linear-gradient(#fff,#F8F9FA 60%);
     padding: 2em 4em 4em;
 
     .card-container {
@@ -327,18 +304,17 @@ nav{
             max-width: 300px;
             width: 30%;
             background: #FFFFFF;
-            box-shadow: $shadow;
             border-radius: 46px;
-            padding:2em 1em;
+            padding:0 1em 2em;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;   
             transition: all 0.1s ease-in; 
+            box-shadow: $card-shadow-light;
 
             .svg-container{
-                padding-bottom:3em;
-                padding-top:2em;
+                padding: 2em 0;
 
                 svg{
                     width: auto;
@@ -361,7 +337,6 @@ nav{
 
             &:hover{
                 transform: translateY(-4px);
-                box-shadow: $shadow-hover;
             }
         }
     }
@@ -378,8 +353,8 @@ nav{
 
 #work{
     border-radius: 0 0 20px 20px;
-    background: white;
-    padding: 2em 4em 6em;
+    background: #F8F9FA;
+    padding: 2em 4em 0;
 
     .work-card-container{
         overflow: visible;
@@ -388,12 +363,8 @@ nav{
         .work-card{
             display:flex;
             border-radius: 46px;
-            height: 15em;
-            box-shadow: $shadow; 
-            
-            &:not(:last-child){
-                margin-bottom: 8em;
-            }
+            box-shadow: $card-shadow; 
+            margin-bottom: 8em;
 
             h2{
                 font-size: 1.5em;
@@ -404,70 +375,59 @@ nav{
                 color: rgb(134, 134, 134);
                 font-weight: 400;
                 font-size: 1em;
-                width: 90%;
             }          
             
+            .gradient{
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg,$color-st, $color-rd);
+                opacity: 0.3;
+                transition: opacity 0.2s ease-in-out;
+            }
+
             &:nth-of-type(odd){
                 .work-card-left{
-                    width:35%;
+                    width:40%;
                     min-width: 370px;
                     background:white;
                     padding: 2em 2.5em;
                     display:flex;
                     flex-direction: column;
                     justify-content: space-between;
+
+                    .btn-container{
+                        overflow: visible;
+                    }
                 }
 
                 .work-card-right{
-                    width: 65%;
+                    width: 60%;
                     background:url(/assets/ocean-school.jpg);
                     background-size: cover;
                     background-position: center;
-
-                    &::after{
-                        float: right;
-                        content:'';
-                        display: block;
-                        width: 0.8em;
-                        height: 0.8em;
-                        padding: 0.8em;
-                        background:white;
-                        border-radius: 50%;
-                        box-shadow: inset $shadow;
-                        margin: 1.5em;
-                    }
                 }
             }
 
             &:nth-of-type(even){
                 .work-card-left{
-                    width:65%;
+                    width:60%;
                     background:url(/assets/ocean-school.jpg);
                     background-size: cover;
                     background-position: center;
-
-                    &::after{
-                        float: left;
-                        content:'';
-                        display: block;
-                        width: 0.8em;
-                        height: 0.8em;
-                        padding: 0.8em;
-                        background:white;
-                        border-radius: 50%;
-                        box-shadow: inset $shadow;
-                        margin: 1.5em;
-                    }
                 }
 
                 .work-card-right{
-                    width:35%;
+                    width:40%;
                     min-width: 370px;
                     background:white;
                     padding: 2em 2.5em;
                     display:flex;
                     flex-direction: column;
                     justify-content: space-between;
+
+                    .btn-container{
+                        overflow: visible;
+                    }
                 }
             }
         }
@@ -531,18 +491,10 @@ nav{
             }
 
             .btn{
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                box-shadow: $btn-shadow;
                 margin: 1em 0 0 0;
                 max-width: unset;
                 cursor: pointer;
-
-                &:hover{
-                    box-shadow: 0 13px 30px -1px rgba(0,0,0,0.3);
-                }
-
-                &:active{
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                }
             }
         }
     }
@@ -558,7 +510,7 @@ nav{
 // FOOTER STYLES
 
 #footer{
-    background: white;
+    background: #F8F9FA;
     
     .container{
         display:flex;
@@ -619,6 +571,14 @@ nav{
     body{
         font-size: 18px;
     }
+
+    #about{
+        .container{
+            .card-container{
+                justify-content: space-between;
+            }
+        }
+    }
     
     #footer{
         padding: 0 4em;
@@ -665,7 +625,7 @@ nav{
                 .btn-container{
                     justify-content: start;
 
-                    .btn-prm{
+                    .btn:first-child{
                         margin-right: 2em;
                     }
                 }
@@ -697,38 +657,13 @@ nav{
         }
     }
 
-    
-}
-
-@media screen and (max-width: 650px){
-    body{
-        font-size: 16px;
-    }
-
-    nav{
-        padding: 0 1em;
-        
-        .nav-container{
-
-            .list{
-                display:none;
-            }
-        }
-    }
-
-    #about{
-        padding: 2em 2em 4em;
-    }
-
-
     #work{
-        padding: 2em 2em 6em;
 
         .work-card-container{
 
             .work-card{
-                min-height: 60vh;
-                height:auto;
+                // min-height: 60vh;
+                // height:auto;
                 width: 100%;
                 flex-direction: column;
 
@@ -752,7 +687,7 @@ nav{
 
                     .work-card-right{
                         width: 100%;
-                        height: 35vh;
+                        height: 30vh;
 
                         &::after{
                             float:left;
@@ -763,7 +698,7 @@ nav{
                 &:nth-of-type(even){
                     .work-card-left{
                         width: 100%;
-                        height: 35vh;
+                        height: 30vh;
                     }
 
                     .work-card-right{
@@ -771,6 +706,49 @@ nav{
                         padding: 2em 2em;
                         min-width: unset;
                     }                 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+    body{
+        font-size: 16px;
+    }
+
+    nav{
+        padding: 0 1em;
+        
+        .nav-container{
+
+            .list{
+                display:none;
+            }
+        }
+    }
+
+    #about{
+        padding: 2em 2em 4em;
+    }
+
+    #work{
+        padding: 2em 2em 0em;
+    }
+   
+    #contact{
+
+        .container{
+            padding: 0 2em 4em;
+
+            form{
+
+                input{
+                    width: 95%;
+                }
+
+                textarea{
+                    width: 95%;
                 }
             }
         }
@@ -811,22 +789,8 @@ nav{
         }   
     }
 
-    #contact{
-
-        .container{
-            padding: 0 2em 4em;
-
-            form{
-
-                input{
-                    width: 95%;
-                }
-
-                textarea{
-                    width: 95%;
-                }
-            }
-        }
+    .btn-color{
+        margin-top: 1em;
     }
 
     #footer{
