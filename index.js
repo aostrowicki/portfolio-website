@@ -1,7 +1,9 @@
+const scroll = new SmoothScroll('a[href*="#"]');
+
 const anims = document.querySelectorAll('.anim');
 
 observerOptions={
-    threshold: 0.8,
+    threshold: 0.7,
     
 };
 
@@ -16,3 +18,6 @@ const observer = new IntersectionObserver(entries=>{
 anims.forEach(anim=>{
     observer.observe(anim);
 })
+
+
+

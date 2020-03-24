@@ -119,63 +119,63 @@ nav{
     width: 100%;
     z-index: 3;
     padding: 0 3em;
-}
 
-.nav-container{
-    max-width: 1240px;
-    margin:auto;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 0;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    font-weight: 600;
-
-    #logo a{
-        text-transform: lowercase;
-        font-size: 1.6em;
-        font-family: 'Maven Pro', sans-serif;
-        font-weight: medium;
-        color:white;
-        letter-spacing: -0.05em;
-        text-decoration: none;   
-    }
-
-    #logo:first-letter{
-        color: rgba(255,255,255,0.7);
-    }
-
-    .list{
+    .nav-container{
+        max-width: 1240px;
+        margin:auto;
         display:flex;
+        justify-content: space-between;
         align-items: center;
-        
-        a {
-            text-decoration: none;
+        padding: 1em 0;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        #logo a{
+            text-transform: lowercase;
+            font-size: 1.6em;
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: medium;
             color:white;
-            margin-left:1.5em;
-            padding:12px 4px;
-            position: relative;
-            font-weight: 500;
+            letter-spacing: -0.05em;
+            text-decoration: none;   
+        }
 
-            &:hover{
-                &::after{
-                    animation: lines 0.8s ease-out forwards;
+        #logo:first-letter{
+            color: rgba(255,255,255,0.7);
+        }
+
+        .list{
+            display:flex;
+            align-items: center;
+            
+            a {
+                text-decoration: none;
+                color:white;
+                margin-left:1.5em;
+                padding:12px 4px;
+                position: relative;
+                font-weight: 500;
+                
+
+                &:hover{
+                    &::after{
+                        animation: lines 0.8s ease-out forwards;
+                    }
                 }
-            }
 
-            &.underline::after{
-                content:'';
-                height:1px;
-                width: 0px;
-                display:block;
-                position: absolute;
-                left:50%;  
+                &.underline::after{
+                    content:'';
+                    height:1px;
+                    width: 0px;
+                    display:block;
+                    position: absolute;
+                    left:50%;  
+                }
             }
         }
     }
 }
-
 
 @keyframes lines{
     25% {
@@ -513,13 +513,25 @@ nav{
     background: #F8F9FA;
     
     .container{
-        display:flex;
         padding-top: 2em;
-        justify-content: space-evenly;
+        text-align: center;
         
         .text-container{
-            width: 20%;
+            vertical-align: top;
             overflow: visible;
+            display: inline-block;
+            max-width:20%;
+            text-align: left;
+            margin-right: 4em;
+
+            svg{
+                vertical-align: top;
+                height:1em;
+                width:1em;
+                margin-left: -1.5em;
+                margin-right: 0.5em;
+                fill: rgb(134, 134, 134);
+            }
 
             h3{
                 font-size: 0.8em;
@@ -527,14 +539,25 @@ nav{
                 text-transform: uppercase;
                 margin-bottom: 0.5em;
                 font-weight: 600;
+                display:inline-block;
             }
 
             p{
-                font-size: 0.8em;
-                color: rgb(134, 134, 134);
+                font-size: 0.8em;               
                 font-weight: 400;
                 padding-bottom: 2em;
+                color: rgb(134, 134, 134);
                 overflow: visible;
+
+                a{
+                    color: rgb(134, 134, 134);
+                    text-decoration: none;
+                    transition: color 0.15s ease-in;
+
+                    &:hover{
+                        color:black;
+                    }
+                }
             }
 
             .svg-container{
@@ -543,7 +566,9 @@ nav{
 
                 svg{
                     width:1.2em;
+                    height: 1.2em;
                     fill: rgb(134, 134, 134);
+                    margin-left: 0;
                     margin-right: 0.5em;
                     transition: fill 0.15s ease-in;
 
@@ -576,20 +601,6 @@ nav{
         .container{
             .card-container{
                 justify-content: space-between;
-            }
-        }
-    }
-    
-    #footer{
-        padding: 0 4em;
-
-        .container{
-            justify-content: space-between; 
-
-            .text-container{
-                width: auto;
-                min-width:30%;
-                padding-right: 2em;
             }
         }
     }

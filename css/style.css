@@ -108,7 +108,7 @@ nav {
   padding: 0 3em;
 }
 
-.nav-container {
+nav .nav-container {
   max-width: 1240px;
   margin: auto;
   display: -webkit-box;
@@ -126,7 +126,7 @@ nav {
   font-weight: 600;
 }
 
-.nav-container #logo a {
+nav .nav-container #logo a {
   text-transform: lowercase;
   font-size: 1.6em;
   font-family: 'Maven Pro', sans-serif;
@@ -136,11 +136,11 @@ nav {
   text-decoration: none;
 }
 
-.nav-container #logo:first-letter {
+nav .nav-container #logo:first-letter {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nav-container .list {
+nav .nav-container .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,7 +149,7 @@ nav {
           align-items: center;
 }
 
-.nav-container .list a {
+nav .nav-container .list a {
   text-decoration: none;
   color: white;
   margin-left: 1.5em;
@@ -158,12 +158,12 @@ nav {
   font-weight: 500;
 }
 
-.nav-container .list a:hover::after {
+nav .nav-container .list a:hover::after {
   -webkit-animation: lines 0.8s ease-out forwards;
           animation: lines 0.8s ease-out forwards;
 }
 
-.nav-container .list a.underline::after {
+nav .nav-container .list a.underline::after {
   content: '';
   height: 1px;
   width: 0px;
@@ -559,18 +559,26 @@ nav {
 }
 
 #footer .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding-top: 2em;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  text-align: center;
 }
 
 #footer .container .text-container {
-  width: 20%;
+  vertical-align: top;
   overflow: visible;
+  display: inline-block;
+  max-width: 20%;
+  text-align: left;
+  margin-right: 4em;
+}
+
+#footer .container .text-container svg {
+  vertical-align: top;
+  height: 1em;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  fill: #868686;
 }
 
 #footer .container .text-container h3 {
@@ -579,14 +587,26 @@ nav {
   text-transform: uppercase;
   margin-bottom: 0.5em;
   font-weight: 600;
+  display: inline-block;
 }
 
 #footer .container .text-container p {
   font-size: 0.8em;
-  color: #868686;
   font-weight: 400;
   padding-bottom: 2em;
+  color: #868686;
   overflow: visible;
+}
+
+#footer .container .text-container p a {
+  color: #868686;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease-in;
+  transition: color 0.15s ease-in;
+}
+
+#footer .container .text-container p a:hover {
+  color: black;
 }
 
 #footer .container .text-container .svg-container {
@@ -598,7 +618,9 @@ nav {
 
 #footer .container .text-container .svg-container svg {
   width: 1.2em;
+  height: 1.2em;
   fill: #868686;
+  margin-left: 0;
   margin-right: 0.5em;
   -webkit-transition: fill 0.15s ease-in;
   transition: fill 0.15s ease-in;
@@ -623,19 +645,6 @@ nav {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  #footer {
-    padding: 0 4em;
-  }
-  #footer .container {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  #footer .container .text-container {
-    width: auto;
-    min-width: 30%;
-    padding-right: 2em;
   }
 }
 
