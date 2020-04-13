@@ -25,23 +25,13 @@ section {
 }
 
 section .title {
-  font-size: 2em;
+  font-size: 1.8em;
   text-transform: uppercase;
   text-align: center;
 }
 
-section .title::after {
-  content: '';
-  display: block;
-  height: 2px;
-  width: 5%;
-  background: #3E41AE;
-  position: absolute;
-  left: 47.5%;
-}
-
 .container {
-  max-width: 1240px;
+  max-width: 1100px;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -109,7 +99,7 @@ nav {
 }
 
 nav .nav-container {
-  max-width: 1240px;
+  max-width: 1440px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,24 +110,18 @@ nav .nav-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1em 0;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-size: 18px;
 }
 
-nav .nav-container #logo a {
-  text-transform: lowercase;
-  font-size: 1.6em;
-  font-family: 'Maven Pro', sans-serif;
-  font-weight: medium;
-  color: white;
-  letter-spacing: -0.05em;
-  text-decoration: none;
+nav .nav-container .logo {
+  cursor: pointer;
+  padding: 1em 0 0;
 }
 
-nav .nav-container #logo:first-letter {
-  color: rgba(255, 255, 255, 0.7);
+nav .nav-container .logo svg {
+  width: 1em;
+  height: 1em;
+  font-size: 2.5em;
 }
 
 nav .nav-container .list {
@@ -152,10 +136,9 @@ nav .nav-container .list {
 nav .nav-container .list a {
   text-decoration: none;
   color: white;
-  margin-left: 1.5em;
+  margin-left: 4em;
   padding: 12px 4px;
   position: relative;
-  font-weight: 500;
 }
 
 nav .nav-container .list a:hover::after {
@@ -206,6 +189,7 @@ nav .nav-container .list a.underline::after {
 }
 
 #landing .container {
+  max-width: 1240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,20 +293,75 @@ nav .nav-container .list a.underline::after {
 #about {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(60%, #F8F9FA));
   background: linear-gradient(#fff, #F8F9FA 60%);
-  padding: 2em 4em 4em;
+  padding: 6em 4em 4em;
 }
 
-#about .card-container {
+#about .container {
+  position: relative;
+}
+
+#about .container .about-container {
+  overflow: hidden;
+  padding-bottom: 2em;
+}
+
+#about .container .image-container {
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 2em;
+}
+
+#about .container .image-container img {
+  height: 100%;
+  width: 100%;
+}
+
+#about .container .text-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em 0 6em;
+  margin-left: 40%;
+}
+
+#about .container .text-container h1 {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+#about .container .text-container p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+#about .container .text-container p a {
+  text-decoration: none;
+  color: #3E41AE;
+  -webkit-transition: color 0.1s ease-in;
+  transition: color 0.1s ease-in;
+}
+
+#about .container .text-container p a:hover {
+  color: #942ABC;
+}
+
+#about .container .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3em 0;
   overflow: visible;
 }
 
-#about .card-container .card {
+#about .container .card-container .card {
   max-width: 300px;
   width: 30%;
   background: #FFFFFF;
@@ -347,29 +386,33 @@ nav .nav-container .list a.underline::after {
           box-shadow: 0px 40px 140px rgba(130, 130, 130, 0.05);
 }
 
-#about .card-container .card .svg-container {
+#about .container .card-container .card span {
+  display: block;
+}
+
+#about .container .card-container .card .svg-container {
   padding: 2em 0;
 }
 
-#about .card-container .card .svg-container svg {
+#about .container .card-container .card .svg-container svg {
   width: auto;
   height: 4.5em;
 }
 
-#about .card-container .card h2 {
+#about .container .card-container .card h2 {
   margin-bottom: 0.6em;
   font-size: 1.4em;
   text-align: center;
 }
 
-#about .card-container .card p {
+#about .container .card-container .card p {
   text-align: center;
   color: #868686;
   font-weight: 400;
   font-size: 1em;
 }
 
-#about .card-container .card:hover {
+#about .container .card-container .card:hover {
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
 }
@@ -567,9 +610,11 @@ nav .nav-container .list a.underline::after {
   vertical-align: top;
   overflow: visible;
   display: inline-block;
-  max-width: 20%;
   text-align: left;
-  margin-right: 4em;
+}
+
+#footer .container .text-container:first-child {
+  padding-right: 4em;
 }
 
 #footer .container .text-container svg {
@@ -609,14 +654,11 @@ nav .nav-container .list a.underline::after {
   color: black;
 }
 
-#footer .container .text-container .svg-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: -1em;
+#footer .container .svg-container {
+  text-align: center;
 }
 
-#footer .container .text-container .svg-container svg {
+#footer .container .svg-container svg {
   width: 1.2em;
   height: 1.2em;
   fill: #868686;
@@ -626,7 +668,7 @@ nav .nav-container .list a.underline::after {
   transition: fill 0.15s ease-in;
 }
 
-#footer .container .text-container .svg-container svg:hover {
+#footer .container .svg-container svg:hover {
   fill: black;
 }
 
@@ -634,17 +676,15 @@ nav .nav-container .list a.underline::after {
   text-align: center;
   font-size: 0.7em;
   color: #b4b4b4;
-  padding: 0 0 1.2em;
+  padding: 2em 0;
 }
 
 @media screen and (max-width: 1110px) {
   body {
     font-size: 18px;
   }
-  #about .container .card-container {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  #about .container .image-container {
+    left: 0;
   }
 }
 
@@ -654,6 +694,10 @@ nav .nav-container .list a.underline::after {
   }
   #landing .container #landing-svg {
     padding-left: 1em;
+  }
+  #about .container .image-container {
+    max-width: 230px;
+    top: 1em;
   }
 }
 
@@ -688,11 +732,27 @@ nav .nav-container .list a.underline::after {
     background-size: cover;
     background-position: center;
   }
-  #about .card-container {
+  #about .container .image-container {
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-bottom: 2em;
+  }
+  #about .container .text-container {
+    margin: 0;
+    padding-bottom: 2em;
+  }
+  #about .container .text-container h1 {
+    text-align: center;
+  }
+  #about .container .text-container p {
+    text-align: center;
+  }
+  #about .container .card-container {
     display: block;
     padding: 0;
   }
-  #about .card-container .card {
+  #about .container .card-container .card {
     width: auto;
     margin: 3em auto 0;
   }
@@ -752,6 +812,9 @@ nav .nav-container .list a.underline::after {
   #about {
     padding: 2em 2em 4em;
   }
+  #about .container .image-container {
+    display: none;
+  }
   #work {
     padding: 2em 2em 0em;
   }
@@ -763,9 +826,6 @@ nav .nav-container .list a.underline::after {
   }
   #contact .container form textarea {
     width: 95%;
-  }
-  #footer .container .text-container:first-child {
-    display: none;
   }
 }
 
@@ -782,6 +842,9 @@ nav .nav-container .list a.underline::after {
   }
   .btn-color {
     margin-top: 1em;
+  }
+  #about .container .text-container p {
+    text-align: left;
   }
   #footer {
     padding: 0 2em;

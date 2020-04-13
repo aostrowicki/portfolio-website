@@ -3,7 +3,7 @@ const scroll = new SmoothScroll('a[href*="#"]');
 const anims = document.querySelectorAll('.anim');
 
 observerOptions={
-    threshold: 0.7,
+    threshold: 0.5,
     
 };
 
