@@ -183,6 +183,7 @@ nav{
     background: linear-gradient(130.04deg, $color-rd -8.2%, $color-st 89.8%);
 
     .container{
+        height:90%;
         max-width: 1240px;
         display:flex;
         align-items: center;
@@ -486,7 +487,7 @@ nav{
 // CONTACT STYLES
 #contact{
     background: linear-gradient(180deg, #3E41AE 0, rgb(192, 69, 203) 191.82%);
-    padding: 2em 0 3em;
+    padding: 3em 0 3em;
 
     .container{
     padding: 0 0 4em;
@@ -555,17 +556,17 @@ nav{
     background: #F8F9FA;
     
     .container{
-        padding-top: 2em;
+        padding: 2em 1em 0;
         text-align: center;
         
         .text-container{
             vertical-align: top;
             overflow: visible;
             display: inline-block;
-            text-align: left;
+            text-align: left;  
 
-            &:first-child{
-                padding-right: 4em;
+            &:not(:first-child){
+                padding-left: 3em;
             }
 
             svg{
@@ -584,6 +585,10 @@ nav{
                 margin-bottom: 0.5em;
                 font-weight: 600;
                 display:inline-block;
+            }
+
+            span{
+                display: block;
             }
 
             p{
@@ -834,6 +839,18 @@ nav{
             }
         }
     }
+
+    #footer .container .text-container{
+        &:nth-child(1),&:nth-child(2){
+            display:none;
+        }
+        &:nth-child(3){
+            padding: 0;
+        }
+        &:nth-child(4){
+            padding-left: 2em;
+        }
+    }
 }
 
 @media screen and (max-width:420px){
@@ -872,10 +889,6 @@ nav{
                 }
             }
         }
-    }
-
-    #footer{
-        padding: 0 2em;
     }
 }
 

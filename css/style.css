@@ -189,6 +189,7 @@ nav .nav-container .list a.underline::after {
 }
 
 #landing .container {
+  height: 90%;
   max-width: 1240px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -528,7 +529,7 @@ nav .nav-container .list a.underline::after {
 #contact {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3E41AE), color-stop(191.82%, #c045cb));
   background: linear-gradient(180deg, #3E41AE 0, #c045cb 191.82%);
-  padding: 2em 0 3em;
+  padding: 3em 0 3em;
 }
 
 #contact .container {
@@ -602,7 +603,7 @@ nav .nav-container .list a.underline::after {
 }
 
 #footer .container {
-  padding-top: 2em;
+  padding: 2em 1em 0;
   text-align: center;
 }
 
@@ -613,8 +614,8 @@ nav .nav-container .list a.underline::after {
   text-align: left;
 }
 
-#footer .container .text-container:first-child {
-  padding-right: 4em;
+#footer .container .text-container:not(:first-child) {
+  padding-left: 3em;
 }
 
 #footer .container .text-container svg {
@@ -633,6 +634,10 @@ nav .nav-container .list a.underline::after {
   margin-bottom: 0.5em;
   font-weight: 600;
   display: inline-block;
+}
+
+#footer .container .text-container span {
+  display: block;
 }
 
 #footer .container .text-container p {
@@ -827,6 +832,15 @@ nav .nav-container .list a.underline::after {
   #contact .container form textarea {
     width: 95%;
   }
+  #footer .container .text-container:nth-child(1), #footer .container .text-container:nth-child(2) {
+    display: none;
+  }
+  #footer .container .text-container:nth-child(3) {
+    padding: 0;
+  }
+  #footer .container .text-container:nth-child(4) {
+    padding-left: 2em;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -845,9 +859,6 @@ nav .nav-container .list a.underline::after {
   }
   #about .container .text-container p {
     text-align: left;
-  }
-  #footer {
-    padding: 0 2em;
   }
 }
 
