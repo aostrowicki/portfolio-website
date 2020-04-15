@@ -105,10 +105,11 @@ section{
 // NAV STYLES
 
 nav{
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 3;
     padding: 0 3em;
+    transition: all 0.2s ease-in-out;
 
     .nav-container{
         max-width: 1440px;
@@ -120,12 +121,15 @@ nav{
 
         .logo {
             cursor: pointer;
-            padding: 1em 0 0;
+            padding: 0.5em 0 0.5em;
+            
 
             svg{
                 width: 1em;
                 height: 1em;
                 font-size: 2.5em;   
+                fill: white;
+                vertical-align: bottom;
             }
         }
 
@@ -136,7 +140,7 @@ nav{
             a {
                 text-decoration: none;
                 color:white;
-                margin-left:4em;
+                margin-left:3em;
                 padding:12px 4px;
                 position: relative;
                 
@@ -153,7 +157,27 @@ nav{
                     display:block;
                     position: absolute;
                     left:50%;  
+                    background: white;
                 }
+            }
+        }
+    }
+}
+
+.scroll{
+    background: white;
+
+    .nav-container {
+    
+        .logo svg{
+            fill: url(#logo-svg);
+        }
+
+        .list a{
+            color:black;
+
+            &.underline::after{
+                background: black;
             }
         }
     }
@@ -161,12 +185,10 @@ nav{
 
 @keyframes lines{
     25% {
-        background:white;
         width:40%;
         left:30%;
     }
     100%{
-        background:white;
         width:75%;
         left:12.5%;
     }
@@ -679,7 +701,7 @@ nav{
             flex-direction: column;
 
             #landing-text{
-                padding-top: 10vh;
+                padding-top: 15vh;
                 width:100%;
                 z-index: 1;
 
@@ -698,7 +720,7 @@ nav{
         }
 
             #landing-svg{
-                height: 60%;
+                height: 70%;
                 background: url(/assets/hero-bg-center.svg) no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -798,14 +820,14 @@ nav{
     }
 
     nav{
-        padding: 0 1em;
-        
-        .nav-container{
+        // padding: 0 1em;
+        display:none;
+        // .nav-container{
 
-            .list{
-                display:none;
-            }
-        }
+        //     .list{
+        //         display:none;
+        //     }
+        // }
     }
 
     #about{
@@ -860,17 +882,13 @@ nav{
 
         .container{
 
-        #landing-text{
-
-            .landing-links{
-                margin-top: 1em;
+            #landing-text{
+                padding-top: 5vh;
             }
         }
-    }
-
 
         #landing-svg{
-            height: 45%;
+            height: 55%;
             margin-left: -2em;
         }   
     }

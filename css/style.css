@@ -92,10 +92,12 @@ section .title {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 3;
   padding: 0 3em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 nav .nav-container {
@@ -115,13 +117,15 @@ nav .nav-container {
 
 nav .nav-container .logo {
   cursor: pointer;
-  padding: 1em 0 0;
+  padding: 0.5em 0 0.5em;
 }
 
 nav .nav-container .logo svg {
   width: 1em;
   height: 1em;
   font-size: 2.5em;
+  fill: white;
+  vertical-align: bottom;
 }
 
 nav .nav-container .list {
@@ -136,7 +140,7 @@ nav .nav-container .list {
 nav .nav-container .list a {
   text-decoration: none;
   color: white;
-  margin-left: 4em;
+  margin-left: 3em;
   padding: 12px 4px;
   position: relative;
 }
@@ -153,16 +157,31 @@ nav .nav-container .list a.underline::after {
   display: block;
   position: absolute;
   left: 50%;
+  background: white;
+}
+
+.scroll {
+  background: white;
+}
+
+.scroll .nav-container .logo svg {
+  fill: url(#logo-svg);
+}
+
+.scroll .nav-container .list a {
+  color: black;
+}
+
+.scroll .nav-container .list a.underline::after {
+  background: black;
 }
 
 @-webkit-keyframes lines {
   25% {
-    background: white;
     width: 40%;
     left: 30%;
   }
   100% {
-    background: white;
     width: 75%;
     left: 12.5%;
   }
@@ -170,12 +189,10 @@ nav .nav-container .list a.underline::after {
 
 @keyframes lines {
   25% {
-    background: white;
     width: 40%;
     left: 30%;
   }
   100% {
-    background: white;
     width: 75%;
     left: 12.5%;
   }
@@ -714,7 +731,7 @@ nav .nav-container .list a.underline::after {
             flex-direction: column;
   }
   #landing .container #landing-text {
-    padding-top: 10vh;
+    padding-top: 15vh;
     width: 100%;
     z-index: 1;
   }
@@ -732,7 +749,7 @@ nav .nav-container .list a.underline::after {
             justify-content: flex-start;
   }
   #landing #landing-svg {
-    height: 60%;
+    height: 70%;
     background: url(/assets/hero-bg-center.svg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -809,9 +826,6 @@ nav .nav-container .list a.underline::after {
     font-size: 16px;
   }
   nav {
-    padding: 0 1em;
-  }
-  nav .nav-container .list {
     display: none;
   }
   #about {
@@ -847,11 +861,11 @@ nav .nav-container .list a.underline::after {
   #landing {
     padding: 2em 2em;
   }
-  #landing .container #landing-text .landing-links {
-    margin-top: 1em;
+  #landing .container #landing-text {
+    padding-top: 5vh;
   }
   #landing #landing-svg {
-    height: 45%;
+    height: 55%;
     margin-left: -2em;
   }
   .btn-color {
