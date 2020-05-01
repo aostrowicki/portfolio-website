@@ -117,7 +117,7 @@ nav{
         display:flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 18px;
+        font-size: 16px;
 
         .logo {
             cursor: pointer;
@@ -421,6 +421,11 @@ nav{
     background: #F8F9FA;
     padding: 2em 4em 0;
 
+    a{
+        color:rgb(134, 134, 134);
+        text-decoration: none;
+    }
+
     .work-card-container{
         overflow: visible;
         padding: 3em 0em;
@@ -462,12 +467,16 @@ nav{
 
                     .btn-container{
                         overflow: visible;
+
+                        a{
+                            color:white;
+                        }
                     }
                 }
 
                 .work-card-right{
                     width: 60%;
-                    background:url(/assets/ocean-school.jpg);
+                    background:$color-st;
                     background-size: cover;
                     background-position: center;
                 }
@@ -476,7 +485,7 @@ nav{
             &:nth-of-type(even){
                 .work-card-left{
                     width:60%;
-                    background:url(/assets/ocean-school.jpg);
+                    background:$color-rd;
                     background-size: cover;
                     background-position: center;
                 }
@@ -492,6 +501,10 @@ nav{
 
                     .btn-container{
                         overflow: visible;
+
+                        a{
+                            color:white;
+                        }
                     }
                 }
             }
@@ -657,6 +670,11 @@ nav{
         font-size: 0.7em;
         color: rgb(180, 180, 180);
         padding: 2em 0;
+
+        a{
+            color: rgb(156, 156, 156);
+            text-decoration: none;
+        }
     }
 }
 

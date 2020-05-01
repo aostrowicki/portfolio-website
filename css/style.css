@@ -112,7 +112,7 @@ nav .nav-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 nav .nav-container .logo {
@@ -446,6 +446,11 @@ nav .nav-container .list a.underline::after {
   padding: 2em 4em 0;
 }
 
+#work a {
+  color: #868686;
+  text-decoration: none;
+}
+
 #work .work-card-container {
   overflow: visible;
   padding: 3em 0em;
@@ -503,16 +508,20 @@ nav .nav-container .list a.underline::after {
   overflow: visible;
 }
 
+#work .work-card-container .work-card:nth-of-type(odd) .work-card-left .btn-container a {
+  color: white;
+}
+
 #work .work-card-container .work-card:nth-of-type(odd) .work-card-right {
   width: 60%;
-  background: url(/assets/ocean-school.jpg);
+  background: #3E41AE;
   background-size: cover;
   background-position: center;
 }
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-left {
   width: 60%;
-  background: url(/assets/ocean-school.jpg);
+  background: #942ABC;
   background-size: cover;
   background-position: center;
 }
@@ -536,6 +545,10 @@ nav .nav-container .list a.underline::after {
 
 #work .work-card-container .work-card:nth-of-type(even) .work-card-right .btn-container {
   overflow: visible;
+}
+
+#work .work-card-container .work-card:nth-of-type(even) .work-card-right .btn-container a {
+  color: white;
 }
 
 #work #work-s {
@@ -699,6 +712,11 @@ nav .nav-container .list a.underline::after {
   font-size: 0.7em;
   color: #b4b4b4;
   padding: 2em 0;
+}
+
+#footer .copyright a {
+  color: #9c9c9c;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1110px) {
