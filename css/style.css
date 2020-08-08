@@ -311,7 +311,7 @@ nav .nav-container .list a.underline::after {
 #about {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(60%, #F8F9FA));
   background: linear-gradient(#fff, #F8F9FA 60%);
-  padding: 6em 4em 4em;
+  padding: 2em 4em 4em;
 }
 
 #about .container {
@@ -375,7 +375,7 @@ nav .nav-container .list a.underline::after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 3em 0;
+  padding: 2em 0 3em;
   overflow: visible;
 }
 
@@ -453,7 +453,7 @@ nav .nav-container .list a.underline::after {
 
 #work .work-card-container {
   overflow: visible;
-  padding: 3em 0em;
+  padding: 2em 0em 3em;
 }
 
 #work .work-card-container .work-card {
